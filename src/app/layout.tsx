@@ -40,7 +40,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Amandya Tech | Next-Gen Photobooth Software",
     description: "Sistem photobooth all-in-one paling mulus buat operator zaman now.",
-  }
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
