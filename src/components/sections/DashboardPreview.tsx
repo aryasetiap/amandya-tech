@@ -21,10 +21,10 @@ export function DashboardPreview() {
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <FadeUp>
                         <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-                            Command your fleet from <span className="text-accent text-gradient">anywhere</span>
+                            Kontrol semua device lo dari <span className="text-accent text-gradient">mana aja</span>
                         </h2>
                         <p className="text-lg text-white/60">
-                            Manage multiple photobooth activations simultaneously. Push template updates, monitor hardware health, and access live galleries instantly.
+                            Pantau banyak photobooth sekaligus. Update template, cek status hardware, sampe buka live gallery, semuanya serba instan.
                         </p>
                     </FadeUp>
                 </div>

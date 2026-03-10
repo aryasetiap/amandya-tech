@@ -10,24 +10,24 @@ import {
 
 const FAQS = [
     {
-        question: 'Does it work without internet?',
-        answer: 'Yes! Amandya Tech features a robust offline mode. Guests can still take photos, sign consent forms, and enter details. Everything automatically syncs to the cloud and sends out emails once you reconnect to Wi-Fi.',
+        question: 'Bisa jalan tanpa internet gak nih?',
+        answer: 'Bisa dong! Amandya Tech punya offline mode yang super tangguh. Tamu tetep bisa foto, ttd consent, dan masukin data. Semuanya bakal otomatis nge-sync ke cloud dan ngirim email pas udah dapet Wi-Fi lagi.',
     },
     {
-        question: 'Can I use both a DSLR and a Webcam at the same event?',
-        answer: 'Absolutely. Our dual-camera architecture allows you to connect a DSLR for high-quality photos and a standard webcam for quick GIF/Boomerang captures simultaneously. The software handles switching seamlessly based on the selected template.',
+        question: 'Bisa pake DSLR sama Webcam barengan di satu event?',
+        answer: 'Bisa banget. Arsitektur dual-camera kita mungkinkan lo colok DSLR buat hasil foto mantap dan webcam biasa buat jepret GIF/Boomerang seketika. Software otomatis nge-switch kameranya mulus banget sesuai template yang tamu pilih.',
     },
     {
-        question: 'Is there a limit on how many events I can run?',
-        answer: 'No limits on events! Our pricing is based on concurrent active devices. If you are on the Pro plan (3 devices), you can run 3 separate events at the exact same time, or use 3 booths at one massive event.',
+        question: 'Ada limit berapa banyak event yang bisa jalan barengan?',
+        answer: 'Gak ada limit event! Harga langganan kita berdasarkan jumlah device aktif. Kalo lo pake plan Pro (3 device), lo bisa jalanin 3 event beda secara bersamaan, atau pasang 3 booth sekaligus di satu event raksasa.',
     },
     {
-        question: 'How does the Consent App add-on work?',
-        answer: 'The Consent App is a separate interface you can load onto an iPad placed away from the printing station. Once a guest takes a photo, it appears on the iPad where they can privately review it, sign your liability/marketing waiver, and enter their email to receive the digital copy.',
+        question: 'Gimana sih cara kerja add-on Consent App?',
+        answer: 'Consent App itu interface terpisah yang bisa lo buka di iPad, ditaruh agak jauh dari booth utama. Habis tamu foto, hasilnya muncul di iPad itu biar mereka bisa review secara private, ttd waiver marketing/liabilitas lo, terus masukin email buat dapetin copy digitalnya.',
     },
     {
-        question: 'Do my clients get a live gallery link?',
-        answer: 'Yes, every event automatically generates a beautiful, mobile-optimized live gallery. On the Pro and Enterprise plans, these galleries are completely white-labeled with your branding and custom domain.',
+        question: 'Klien gue dapet link live gallery gak?',
+        answer: 'Pasti dapet! Tiap event otomatis nge-generate live gallery keren yang udah dioptimasi buat mobile. Kalo lo langganan plan Pro atau Enterprise, gallery ini full white-label pake branding dan custom domain lo sendiri.',
     },
 ];
 
@@ -37,10 +37,10 @@ export function FAQSection() {
             <div className="container mx-auto px-4 max-w-4xl">
                 <FadeUp className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-                        Frequently Asked <span className="text-accent">Questions</span>
+                        Yang Sering <span className="text-accent">Ditanyain (FAQ)</span>
                     </h2>
                     <p className="text-lg text-white/60">
-                        Got questions? We&apos;ve got answers. If you need more help, our support team is 24/7.
+                        Ada pertanyaan? Kita punya jawabannya. Butuh bantuan lebih? Tim support kita standby 24/7.
                     </p>
                 </FadeUp>
 

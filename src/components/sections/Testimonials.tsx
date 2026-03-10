@@ -7,25 +7,25 @@ const TESTIMONIALS = [
     {
         name: "Sarah Jenkins",
         role: "Owner, Snap&Smile Events",
-        content: "We switched to Amandya Tech last month and it's been a game changer. The dual camera feature alone saved us thousands on extra iPads.",
+        content: "Semenjak pindah ke Amandya Tech bulan lalu, bener-bener jadi game changer. Fitur dual kameranya doang udah hemat ribuan dolar buat beli iPad ekstra.",
         rating: 5,
     },
     {
         name: "Marcus Chen",
         role: "Director, Luxe Booths",
-        content: "The offline mode is a lifesaver. We did a wedding in a barn with zero service, and everything synced perfectly once we hit Wi-Fi.",
+        content: "Offline mode-nya penyelamat banget. Pernah nge-job wedding di tempat antah berantah no sinyal, dan semuanya nge-sync mulus pas dapet Wi-Fi.",
         rating: 5,
     },
     {
         name: "Elena Rodriguez",
         role: "Event Coordinator",
-        content: "Clients love the instant WhatsApp sharing. The fact that it collects consent digitally has streamlined our entire legal process.",
+        content: "Klien pada suka banget sama fitur share WA instan. Kumpul consent secara digital juga bikin proses legalitas kita jauh lebih sat-set.",
         rating: 5,
     },
     {
         name: "David Kim",
         role: "Founder, DK Photography",
-        content: "The live template editor means I don't need to open Photoshop on-site anymore. I can fix typos or change overlays right from my phone.",
+        content: "Berkat editor template live, gue gak perlu buka Photoshop lagi di lokasi. Revisi typo atau ganti overlay gampang banget lewat hape doang.",
         rating: 4,
     },
 ];
@@ -36,7 +36,7 @@ export function Testimonials() {
             <div className="container mx-auto px-4 mb-16 text-center">
                 <FadeUp>
                     <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-                        Loved by <span className="text-accent">operators</span> globally
+                        Jadi favorit para <span className="text-accent">operator</span> di seluruh dunia
                     </h2>
                 </FadeUp>
             </div>

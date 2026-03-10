@@ -21,20 +21,20 @@ export function Hero() {
                     <FadeUp delay={0.1} yOffset={20}>
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 glass mb-8 animate-pulse-slow">
                             <Sparkles className="w-4 h-4 text-accent" />
-                            <span className="text-sm font-medium text-white/80">Amandya Tech V1.1 is Live</span>
+                            <span className="text-sm font-medium text-white/80">Amandya Tech V1.1 Udah Live 🎉</span>
                         </div>
                     </FadeUp>
 
                     {/* Headline Typography */}
                     <HeroTypography
-                        text="Elevate Your Photobooth Business with Smart Automation"
-                        highlightedWord="Smart"
+                        text="Upgrade Bisnis Photobooth Kamu Pakai Automasi Pintar"
+                        highlightedWord="Pintar"
                     />
 
                     {/* Subheadline */}
                     <FadeUp delay={0.3}>
                         <p className="text-lg md:text-xl text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed">
-                            The all-in-one software ecosystem designed specifically for modern photobooth operators. Live gallery, dual-camera support, and automated consent flow.
+                            Ekosistem software all-in-one yang didesain khusus buat operator photobooth zaman now. Nikmatin fitur live gallery, support dual-kamera, dan flow consent yang otomatis banget.
                         </p>
                     </FadeUp>
 
@@ -44,14 +44,14 @@ export function Hero() {
                             size="lg"
                             className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 h-12 text-base shadow-xl shadow-primary/20"
                         >
-                            Start Free Trial
+                            Mulai Free Trial
                         </Button>
                         <Button
                             size="lg"
                             variant="outline"
                             className="w-full sm:w-auto rounded-full px-8 h-12 text-base glass border-white/10 hover:bg-white/5"
                         >
-                            Book a Demo
+                            Jadwalin Demo
                             <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
                     </FadeUp>

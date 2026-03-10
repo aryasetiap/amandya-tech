@@ -16,7 +16,7 @@ export function SocialProof() {
             <div className="container mx-auto px-4 text-center">
                 <FadeUp>
                     <p className="text-sm font-medium text-white/40 mb-10 uppercase tracking-widest">
-                        Trusted by innovative photobooth operators worldwide
+                        Dipercaya sama operator photobooth paling inovatif se-dunia
                     </p>
 
                     <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">

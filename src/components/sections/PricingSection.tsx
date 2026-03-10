@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 const TIERS = [
     {
         name: 'Lite',
-        description: 'Perfect for independent photobooth operators just starting out.',
+        description: 'Cocok banget buat operator photobooth independen yang baru merintis bisnis.',
         priceMonthly: 49,
         priceYearly: 39,
         features: [
@@ -27,7 +27,7 @@ const TIERS = [
     },
     {
         name: 'Pro',
-        description: 'For growing businesses needing white-label tools and power features.',
+        description: 'Buat bisnis yang lagi laris lari dan butuh tools white-label plus fitur pro.',
         priceMonthly: 99,
         priceYearly: 79,
         isPopular: true,
@@ -46,7 +46,7 @@ const TIERS = [
     },
     {
         name: 'Enterprise',
-        description: 'Unlimited scale for large agencies and permanent installations.',
+        description: 'Scale-up tak terbatas buat agensi gede atau instalasi permanen.',
         priceMonthly: 249,
         priceYearly: 199,
         features: [
@@ -73,10 +73,10 @@ export function PricingSection() {
                 <div className="text-center mb-16 max-w-2xl mx-auto">
                     <FadeUp>
                         <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-                            Simple, transparent pricing
+                            Harga simple yang transparan abis
                         </h2>
                         <p className="text-lg text-white/60 mb-8">
-                            No hidden fees. Choose the plan that best fits your business volume.
+                            Gak ada biaya tersembunyi. Pilih plan yang paling pas buat skala bisnis lo sekarang.
                         </p>
 
                         {/* Billing Toggle */}
@@ -88,7 +88,7 @@ export function PricingSection() {
                                     !isYearly ? 'bg-white/10 text-white shadow-sm' : 'text-white/50 hover:text-white'
                                 )}
                             >
-                                Monthly
+                                Bulanan
                             </button>
                             <button
                                 onClick={() => setIsYearly(true)}
@@ -97,9 +97,9 @@ export function PricingSection() {
                                     isYearly ? 'bg-accent text-white shadow-sm' : 'text-white/50 hover:text-white'
                                 )}
                             >
-                                Yearly
+                                Tahunan
                                 <span className={cn("text-[10px] px-2 py-0.5 rounded-full", isYearly ? "bg-white/20" : "bg-accent/20 text-accent")}>
-                                    Save 20%
+                                    Hemat 20%
                                 </span>
                             </button>
                         </div>
@@ -118,7 +118,7 @@ export function PricingSection() {
                                     <>
                                         <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-accent to-transparent" />
                                         <div className="absolute top-8 right-8 text-xs font-bold text-accent uppercase tracking-wider bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
-                                            Most Popular
+                                            Paling Laris
                                         </div>
                                     </>
                                 )}
@@ -130,10 +130,10 @@ export function PricingSection() {
                                     <span className="text-4xl font-bold text-white">
                                         ${isYearly ? tier.priceYearly : tier.priceMonthly}
                                     </span>
-                                    <span className="text-white/50">/mo</span>
+                                    <span className="text-white/50">/bln</span>
                                     {isYearly && (
                                         <div className="text-sm text-accent mt-1">
-                                            Billed ${tier.priceYearly * 12} annually
+                                            Ditagih ${tier.priceYearly * 12} per tahun
                                         </div>
                                     )}
                                 </div>
@@ -147,12 +147,12 @@ export function PricingSection() {
                                             : "glass border-white/10 hover:bg-white/5 text-white"
                                     )}
                                 >
-                                    Get Started with {tier.name}
+                                    Mulai dengan {tier.name}
                                 </Button>
 
                                 <div className="flex-1 space-y-4">
                                     <p className="text-sm font-medium text-white/80 border-b border-white/10 pb-2 mb-4">
-                                        What's included:
+                                        Yang lo dapet:
                                     </p>
 
                                     <ul className="space-y-3">
