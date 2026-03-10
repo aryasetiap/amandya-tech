@@ -4,7 +4,6 @@ import { FadeUp } from '@/components/animations/FadeUp';
 import { HeroTypography } from '@/components/animations/HeroTypography';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import Image from 'next/image';
 
 export function Hero() {
     return (

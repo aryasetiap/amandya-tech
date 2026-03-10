@@ -2,14 +2,6 @@
 
 import { FadeUp } from '@/components/animations/FadeUp';
 
-const CLIENTS = [
-    { name: 'Acme Corp', logo: 'https://ui.shadcn.com/logos/acme.svg' },
-    { name: 'Vercel', logo: 'https://ui.shadcn.com/logos/vercel.svg' },
-    { name: 'Next.js', logo: 'https://ui.shadcn.com/logos/nextjs.svg' },
-    { name: 'Stripe', logo: 'https://ui.shadcn.com/logos/stripe.svg' },
-    { name: 'Supabase', logo: 'https://ui.shadcn.com/logos/supabase.svg' },
-];
-
 export function SocialProof() {
     return (
         <section className="py-20 border-y border-white/5 bg-white/2">

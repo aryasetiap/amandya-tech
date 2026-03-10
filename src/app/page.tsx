@@ -7,8 +7,15 @@ import { PricingSection } from '@/components/sections/PricingSection';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { BottomCTA } from '@/components/sections/BottomCTA';
+import { client } from '@/lib/sanity.client';
+import { testimonialsQuery, faqsQuery } from '@/lib/sanity.queries';
 
-export default function Home() {
+export default async function Home() {
+  const [testimonials, faqs] = await Promise.all([
+    client.fetch(testimonialsQuery),
+    client.fetch(faqsQuery)
+  ]);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Hero />
@@ -17,8 +24,8 @@ export default function Home() {
       <DashboardPreview />
       <AddonEcosystem />
       <PricingSection />
-      <Testimonials />
-      <FAQSection />
+      <Testimonials initialTestimonials={testimonials} />
+      <FAQSection initialFaqs={faqs} />
       <BottomCTA />
     </div>
   );

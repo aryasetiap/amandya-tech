@@ -25,7 +25,22 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Amandya Tech | Smart Interactive Photobooth Software System",
-  description: "Revolusi bisnis photobooth Anda dengan perangkat lunak interaktif Amandya Tech. Dilengkapi fitur Live Mode, Dual Camera, dan manajemen dashboard cloud terpusat.",
+  description: "Revolusi bisnis photobooth lo dengan software interaktif Amandya Tech. Dilengkapi fitur Live Mode, Dual Camera, otomatis form consent, dan management dashboard cloud terpusat.",
+  keywords: ["Software photobooth Indonesia", "Photobooth Software", "Amandya Tech", "Live Gallery Photobooth", "Automasi Photobooth", "Digital Consent"],
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    url: "https://amandya.tech",
+    siteName: "Amandya Tech",
+    title: "Amandya Tech | Next-Gen Photobooth Software",
+    description: "Sistem photobooth all-in-one paling fleksibel buat operator zaman now.",
+    images: [{ url: "/og-image.jpg" }] // assuming there will be an og-image later
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Amandya Tech | Next-Gen Photobooth Software",
+    description: "Sistem photobooth all-in-one paling mulus buat operator zaman now.",
+  }
 };
 
 export default function RootLayout({

@@ -8,7 +8,13 @@ import {
     AccordionTrigger,
 } from '@/components/ui/accordion';
 
-const FAQS = [
+export interface FAQItem {
+    _id?: string;
+    question: string;
+    answer: string;
+}
+
+const STATIC_FAQS: FAQItem[] = [
     {
         question: 'Bisa jalan tanpa internet gak nih?',
         answer: 'Bisa dong! Amandya Tech punya offline mode yang super tangguh. Tamu tetep bisa foto, ttd consent, dan masukin data. Semuanya bakal otomatis nge-sync ke cloud dan ngirim email pas udah dapet Wi-Fi lagi.',
@@ -31,7 +37,9 @@ const FAQS = [
     },
 ];
 
-export function FAQSection() {
+export function FAQSection({ initialFaqs = [] }: { initialFaqs?: FAQItem[] }) {
+    const displayFaqs = initialFaqs.length > 0 ? initialFaqs : STATIC_FAQS;
+
     return (
         <section className="py-24 relative">
             <div className="container mx-auto px-4 max-w-4xl">
@@ -47,8 +55,8 @@ export function FAQSection() {
                 <FadeUp delay={0.2}>
                     <div className="bg-[#0B111A] rounded-2xl border border-white/10 p-6 md:p-8 glass-card">
                         <Accordion className="w-full">
-                            {FAQS.map((faq, i) => (
-                                <AccordionItem key={i} value={`item-${i}`} className="border-white/10">
+                            {displayFaqs.map((faq, i) => (
+                                <AccordionItem key={faq._id || i} value={`item-${i}`} className="border-white/10">
                                     <AccordionTrigger className="text-left text-white hover:text-accent transition-colors font-medium text-lg py-6">
                                         {faq.question}
                                     </AccordionTrigger>
