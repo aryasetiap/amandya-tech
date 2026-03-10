@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter, JetBrains_Mono, Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Navbar } from "@/components/shared/Navbar";
+import { Footer } from "@/components/shared/Footer";
+import { SmoothScroll } from "@/components/animations/SmoothScroll";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -35,7 +38,11 @@ export default function RootLayout({
       <body
         className={`${jakarta.variable} ${inter.variable} ${jetbrains.variable} font-sans antialiased`}
       >
-        {children}
+        <SmoothScroll>
+          <Navbar />
+          <main className="min-h-screen pt-24">{children}</main>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );
