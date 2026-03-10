@@ -21,10 +21,10 @@ export function DashboardPreview() {
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <FadeUp>
                         <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-                            Kontrol semua device lo dari <span className="text-accent text-gradient">mana aja</span>
+                            Control Your Devices <span className="text-accent text-gradient">from Anywhere</span>
                         </h2>
                         <p className="text-lg text-white/60">
-                            Pantau banyak photobooth sekaligus. Update template, cek status hardware, sampe buka live gallery, semuanya serba instan.
+                            Pantau banyak titik photobooth sekaligus. Update template, cek hardware status, sampe buka Live Gallery, semuanya serba instan dari satu Cloud Dashboard.
                         </p>
                     </FadeUp>
                 </div>

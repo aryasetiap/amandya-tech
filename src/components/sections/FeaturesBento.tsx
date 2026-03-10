@@ -49,10 +49,10 @@ export function FeaturesBento() {
             <div className="container mx-auto px-4">
                 <FadeUp className="text-center mb-16 max-w-3xl mx-auto">
                     <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-                        Semua yang kamu butuhin di satu <span className="text-accent">smart system</span>
+                        All You Need in <span className="text-accent">One Smart System</span>
                     </h2>
                     <p className="text-lg text-white/60">
-                        Tinggalin langganan yang mahal & software yang ribet. Amandya Tech gabungin semua workflow lo ke satu ekosistem yang anti-ribet.
+                        Tinggalin subscription mahal & software jadul yang ribet. Amandya Tech gabungin semua workflow lo ke satu ekosistem yang effortless.
                     </p>
                 </FadeUp>
 
@@ -60,8 +60,8 @@ export function FeaturesBento() {
                     {/* Main big card */}
                     <FadeUp delay={0.1} className="md:col-span-2 md:row-span-2">
                         <BentoCard
-                            title="Support Dual Camera & Video"
-                            description="Gampang banget switch antara DSLR buat hasil super jernih dan Webcam buat seru-seruan bikin boomerang atau wide-angle. Nge-record video juga instan tanpa perlu ganti aplikasi."
+                            title="Dual Camera & Video Support"
+                            description="Gampang banget switch antara DSLR buat output super jernih, dan Webcam buat seru-seruan bikin Boomerang atau Wide-angle. Record video juga instan tanpa perlu gonta-ganti app."
                             icon={<Camera className="w-6 h-6" />}
                             className="h-full flex flex-col"
                         >
@@ -84,8 +84,8 @@ export function FeaturesBento() {
                     {/* Top right card */}
                     <FadeUp delay={0.2}>
                         <BentoCard
-                            title="Share Instan"
-                            description="Tamu bisa langsung dapetin fotonya via QR Code, Email, atau WhatsApp secepat kilat berkat jaringan edge-optimized kita."
+                            title="Instant Sharing"
+                            description="Tamu bisa langsung dapet fotonya via QR Code, Email, atau WhatsApp secepat kilat. Thanks to our edge-optimized network! ⚡"
                             icon={<Share2 className="w-6 h-6" />}
                             className="h-full"
                         />
@@ -94,8 +94,8 @@ export function FeaturesBento() {
                     {/* Middle right card */}
                     <FadeUp delay={0.3}>
                         <BentoCard
-                            title="Sync Cloud Gallery"
-                            description="Tiap jepretan langsung ter-backup aman dan nge-sync ke live gallery kamu secara real-time."
+                            title="Real-time Cloud Sync"
+                            description="Tiap jepretan langsung ke-backup aman dan nge-sync ke Live Gallery lo secara real-time. No more lost files."
                             icon={<Cloud className="w-6 h-6" />}
                             className="h-full"
                         />
@@ -104,8 +104,8 @@ export function FeaturesBento() {
                     {/* Bottom row span 2 */}
                     <FadeUp delay={0.4} className="md:col-span-2">
                         <BentoCard
-                            title="Otomasi Koleksi Data"
-                            description="Kumpulin email, nomor HP, sama form persetujuan (consent) digital otomatis. Bisa langsung di-export ke CRM bisnis lo."
+                            title="Automated Data Collection"
+                            description="Kumpulin email, nomor HP, dan digital consent otomatis. Langsung export ke CRM bisnis lo buat retargeting yang lebih gampang."
                             icon={<ShieldCheck className="w-6 h-6" />}
                             className="h-full overflow-visible"
                         >
@@ -119,8 +119,8 @@ export function FeaturesBento() {
                     {/* Bottom right */}
                     <FadeUp delay={0.5}>
                         <BentoCard
-                            title="Zero Latency"
-                            description="Dibuat pakai Rust & C++ biar proses rendering dan kerjanya ngebut parah, tanpa ngelag."
+                            title="Zero Latency Engine"
+                            description="Di-build pakai Rust & C++ biar proses rendering ngebut parah. Smooth performance, zero lag."
                             icon={<Zap className="w-6 h-6" />}
                             className="h-full"
                         />

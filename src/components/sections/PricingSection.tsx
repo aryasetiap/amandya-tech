@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 const TIERS = [
     {
         name: 'Lite',
-        description: 'Cocok banget buat operator photobooth independen yang baru merintis bisnis.',
+        description: 'Pas banget buat independent operator yang baru mulai hustle.',
         priceMonthly: 49,
         priceYearly: 39,
         features: [
@@ -27,7 +27,7 @@ const TIERS = [
     },
     {
         name: 'Pro',
-        description: 'Buat bisnis yang lagi laris lari dan butuh tools white-label plus fitur pro.',
+        description: 'Buat bisnis yang lagi running fast dan butuh 100% white-label plus fitur Pro.',
         priceMonthly: 99,
         priceYearly: 79,
         isPopular: true,
@@ -46,7 +46,7 @@ const TIERS = [
     },
     {
         name: 'Enterprise',
-        description: 'Scale-up tak terbatas buat agensi gede atau instalasi permanen.',
+        description: 'Unlimited scale-up buat agensi besar atau permanent installation.',
         priceMonthly: 249,
         priceYearly: 199,
         features: [
@@ -73,10 +73,10 @@ export function PricingSection() {
                 <div className="text-center mb-16 max-w-2xl mx-auto">
                     <FadeUp>
                         <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-                            Harga simple yang transparan abis
+                            Simple & Transparent Pricing
                         </h2>
                         <p className="text-lg text-white/60 mb-8">
-                            Gak ada biaya tersembunyi. Pilih plan yang paling pas buat skala bisnis lo sekarang.
+                            No hidden fees. Pilih plan yang paling pas buat scale bisnis lo sekarang.
                         </p>
 
                         {/* Billing Toggle */}

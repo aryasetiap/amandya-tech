@@ -17,18 +17,18 @@ export function BottomCTA() {
                 <FadeUp>
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-8">
                         <Zap className="w-4 h-4 text-accent" />
-                        <span className="text-sm font-medium text-white/80">Siap buat level up?</span>
+                        <span className="text-sm font-medium text-white/80">Ready to Level Up?</span>
                     </div>
 
                     <h2 className="text-4xl md:text-7xl font-heading font-black text-white mb-8 tracking-tight max-w-4xl mx-auto">
-                        Bangun kerajaan <br className="hidden md:block" />
+                        Bangun Photobooth <br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-accent via-blue-400 to-purple-500">
-                            photobooth impian lo
+                            Empire Lo Sekarang
                         </span>
                     </h2>
 
                     <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto leading-relaxed">
-                        Gabung sama ribuan operator sukses yang udah ngotomatisin workflow dan ningkatin revenue booking mereka.
+                        Join ribuan operator sukses yang udah otomatisin workflow dan boost revenue mereka bareng Amandya Tech.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -36,20 +36,20 @@ export function BottomCTA() {
                             size="lg"
                             className="w-full sm:w-auto bg-white text-black hover:bg-white/90 rounded-full px-10 h-14 text-lg font-bold shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all hover:scale-105"
                         >
-                            Mulai 14 Hari Free Trial
+                            Start 14-Days Free Trial
                         </Button>
                         <Button
                             size="lg"
                             variant="outline"
                             className="w-full sm:w-auto rounded-full px-8 h-14 text-lg glass border-white/10 hover:bg-white/5 text-white"
                         >
-                            Hubungi Sales
+                            Talk to Sales
                             <ArrowRight className="ml-2 w-5 h-5" />
                         </Button>
                     </div>
 
                     <p className="mt-8 text-sm text-white/40">
-                        Gak perlu kartu kredit. Lanjut atau cancel bebas kapan aja.
+                        No credit card required. Cancel anytime.
                     </p>
                 </FadeUp>
             </div>

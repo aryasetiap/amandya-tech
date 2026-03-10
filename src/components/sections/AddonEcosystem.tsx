@@ -6,28 +6,28 @@ import { Sparkles, Video, Share, UploadCloud, Brush } from 'lucide-react';
 const ADDONS = [
     {
         title: 'Flipbook Digital',
-        description: 'Ubah jepretan burst mode cepet jadi flipbook digital interaktif dan asik buat di-share.',
+        description: 'Ubah jepretan burst mode jadi digital flipbook interaktif yang shareable banget.',
         icon: <Video className="w-5 h-5 text-purple-400" />,
         color: 'bg-purple-500/10',
         border: 'border-purple-500/20',
     },
     {
         title: 'Consent App Sharing',
-        description: 'App iPad khusus biar tamu bisa liat foto, ttd disclaimer, & masukin email aman dan super private di luar booth utama.',
+        description: 'Dedicated iPad App biar tamu bisa liat foto, isi disclaimer, & input data diri secara super private di luar main booth.',
         icon: <Share className="w-5 h-5 text-emerald-400" />,
         color: 'bg-emerald-500/10',
         border: 'border-emerald-500/20',
     },
     {
         title: 'Cloud Print Queue',
-        description: 'Kirim cetakan ke banyak printer sekaligus di seluruh venue gampang banget via jaringan lokal atau cloud.',
+        description: 'Kirim print job ke banyak printer sekaligus di seluruh venue dengan gampang via Local Network atau Cloud.',
         icon: <UploadCloud className="w-5 h-5 text-blue-400" />,
         color: 'bg-blue-500/10',
         border: 'border-blue-500/20',
     },
     {
         title: 'AI Remove Background',
-        description: 'Sulap green screen atau ganti background secara instan tanpa butuh backdrop fisik yang ribet.',
+        description: 'Ganti background instan pakai AI magic. Gak butuh green screen atau backdrop fisik yang ribet.',
         icon: <Brush className="w-5 h-5 text-pink-400" />,
         color: 'bg-pink-500/10',
         border: 'border-pink-500/20',
@@ -43,13 +43,13 @@ export function AddonEcosystem() {
                         <FadeUp>
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
                                 <Sparkles className="w-4 h-4 text-accent" />
-                                <span className="text-sm font-medium text-white/80">Arsitektur Super Fleksibel</span>
+                                <span className="text-sm font-medium text-white/80">Super Flexible Architecture</span>
                             </div>
                             <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-                                Makin mantap dengan <span className="text-accent text-gradient">add-on super</span>
+                                Makin pro dengan <span className="text-accent text-gradient">Premium Add-ons</span>
                             </h2>
                             <p className="text-lg text-white/60 max-w-xl">
-                                Mulai dari software inti, dan tambah modul premium kapan pun bisnis lo mulai butuh. Amandya Tech siap nge-scale bareng lo.
+                                Mulai dari core software, dan tambah modul premium kapan pun bisnis lo butuh scale up. Amandya Tech siap tumbuh bareng lo.
                             </p>
                         </FadeUp>
                     </div>

@@ -26,14 +26,14 @@ export function Hero() {
 
                     {/* Headline Typography */}
                     <HeroTypography
-                        text="Upgrade Bisnis Photobooth Kamu Pakai Automasi Pintar"
-                        highlightedWord="Pintar"
+                        text="Level Up Bisnis Photobooth Lo Pakai Smart Automation 🚀"
+                        highlightedWord="Smart Automation 🚀"
                     />
 
                     {/* Subheadline */}
                     <FadeUp delay={0.3}>
                         <p className="text-lg md:text-xl text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed">
-                            Ekosistem software all-in-one yang didesain khusus buat operator photobooth zaman now. Nikmatin fitur live gallery, support dual-kamera, dan flow consent yang otomatis banget.
+                            Ekosistem software all-in-one yang di-desain khusus buat operator photobooth zaman now. Nikmatin seamless workflow dengan Live Gallery, Dual Camera, dan Digital Consent yang otomatis jalan sendiri.
                         </p>
                     </FadeUp>
 
@@ -43,14 +43,14 @@ export function Hero() {
                             size="lg"
                             className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 h-12 text-base shadow-xl shadow-primary/20"
                         >
-                            Mulai Free Trial
+                            Claim 14-Days Free Trial
                         </Button>
                         <Button
                             size="lg"
                             variant="outline"
                             className="w-full sm:w-auto rounded-full px-8 h-12 text-base glass border-white/10 hover:bg-white/5"
                         >
-                            Jadwalin Demo
+                            Book a Demo
                             <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
                     </FadeUp>
