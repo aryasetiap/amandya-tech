@@ -55,8 +55,8 @@ export default function RootLayout({
       <body
         className={`${jakarta.variable} ${inter.variable} ${jetbrains.variable} font-sans antialiased`}
       >
+        <Navbar />
         <SmoothScroll>
-          <Navbar />
           <main className="min-h-screen pt-24">{children}</main>
           <Footer />
         </SmoothScroll>
