@@ -16,7 +16,7 @@ export function Footer() {
         setMounted(true);
     }, []);
 
-    const logoSrc = mounted && theme === 'dark' ? '/logo-amandya-white.png' : '/logo-amandya.png';
+    const logoSrc = mounted && theme === 'dark' ? '/logo-amandya-white.png' : '/logo-amandya-navy.png';
 
     return (
         <footer className="border-t border-border bg-card pt-16 pb-8">
