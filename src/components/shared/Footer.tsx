@@ -38,28 +38,28 @@ export function Footer() {
                     </div>
                     
                     <div>
-                        <h4 className="font-heading font-medium text-white mb-4">Product</h4>
+                        <h4 className="font-heading font-medium text-white mb-4">Produk</h4>
                         <ul className="space-y-3 text-sm text-white/60">
                             <li>
                                 <Link href="#features" className="hover:text-white transition-colors">
-                                    Features
+                                    Fitur
                                 </Link>
                             </li>
                             <li>
                                 <Link href="#pricing" className="hover:text-white transition-colors">
-                                    Pricing
+                                    Paket Harga
                                 </Link>
                             </li>
                             <li>
                                 <Link href="#faq" className="hover:text-white transition-colors">
-                                    Documentation
+                                    Dokumentasi
                                 </Link>
                             </li>
                         </ul>
                     </div>
                     
                     <div>
-                        <h4 className="font-heading font-medium text-white mb-4">Connect</h4>
+                        <h4 className="font-heading font-medium text-white mb-4">Hubungi Kami</h4>
                         <div className="flex flex-col gap-3">
                             <Link 
                                 href="https://wa.me/6285669644533" 
@@ -67,7 +67,7 @@ export function Footer() {
                                 className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
                             >
                                 <MessageCircle className="w-4 h-4 text-emerald-400" />
-                                <span>WhatsApp Support</span>
+                                <span>WhatsApp Official</span>
                             </Link>
                             <Link 
                                 href="https://instagram.com/amandya.tech" 
@@ -75,7 +75,7 @@ export function Footer() {
                                 className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
                             >
                                 <Instagram className="w-4 h-4 text-pink-500" />
-                                <span>@amandya.tech</span>
+                                <span>Instagram Official</span>
                             </Link>
                         </div>
                     </div>
@@ -84,8 +84,8 @@ export function Footer() {
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-[10px] text-white/30 uppercase tracking-widest">
                     <p>&copy; {currentYear} Amandya Tech. All rights reserved.</p>
                     <div className="flex space-x-6 mt-4 md:mt-0">
-                        <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-                        <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+                        <Link href="/privacy" className="hover:text-white transition-colors">Privasi</Link>
+                        <Link href="/terms" className="hover:text-white transition-colors">Syarat & Ketentuan</Link>
                     </div>
                 </div>
             </div>

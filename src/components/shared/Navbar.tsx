@@ -44,25 +44,25 @@ export function Navbar() {
                         href="#features"
                         className="text-sm font-medium text-white/70 hover:text-white transition-colors"
                     >
-                        Features
+                        Fitur Kece
                     </Link>
                     <Link
                         href="#how-it-works"
                         className="text-sm font-medium text-white/70 hover:text-white transition-colors"
                     >
-                        How it Works
+                        Cara Kerja
                     </Link>
                     <Link
                         href="#pricing"
                         className="text-sm font-medium text-white/70 hover:text-white transition-colors"
                     >
-                        Pricing
+                        Harga & Paket
                     </Link>
                     <Button
                         variant="default"
                         className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6"
                     >
-                        Get Started
+                        Mulai Sekarang
                     </Button>
                 </div>
 
@@ -83,27 +83,27 @@ export function Navbar() {
                             className="text-base font-medium text-white/70 hover:text-white"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
-                            Features
+                            Fitur Kece
                         </Link>
                         <Link
                             href="#how-it-works"
                             className="text-base font-medium text-white/70 hover:text-white"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
-                            How it Works
+                            Cara Kerja
                         </Link>
                         <Link
                             href="#pricing"
                             className="text-base font-medium text-white/70 hover:text-white"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
-                            Pricing
+                            Harga & Paket
                         </Link>
                         <Button
                             variant="default"
                             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full"
                         >
-                            Get Started
+                            Mulai Sekarang
                         </Button>
                     </div>
                 )}
