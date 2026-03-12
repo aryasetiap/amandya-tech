@@ -3,6 +3,7 @@
 import { FadeUp } from '@/components/animations/FadeUp';
 import { HeroTypography } from '@/components/animations/HeroTypography';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 export function Hero() {
@@ -39,20 +40,24 @@ export function Hero() {
 
                     {/* CTA Buttons */}
                     <FadeUp delay={0.4} className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                        <Button
-                            size="lg"
-                            className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 h-12 text-base shadow-xl shadow-primary/20"
-                        >
-                            Claim 14-Days Free Trial
-                        </Button>
-                        <Button
-                            size="lg"
-                            variant="outline"
-                            className="w-full sm:w-auto rounded-full px-8 h-12 text-base glass border-white/10 hover:bg-white/5"
-                        >
-                            Book a Demo
-                            <ArrowRight className="ml-2 w-4 h-4" />
-                        </Button>
+                        <Link href="#pricing" className="w-full sm:w-auto">
+                            <Button
+                                size="lg"
+                                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 h-12 text-base shadow-xl shadow-primary/20"
+                            >
+                                Mulai Level Up Sekarang
+                            </Button>
+                        </Link>
+                        <Link href="#features" className="w-full sm:w-auto">
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="w-full rounded-full px-8 h-12 text-base glass border-white/10 hover:bg-white/5"
+                            >
+                                Lihat Fitur Kece
+                                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                            </Button>
+                        </Link>
                     </FadeUp>
                 </div>
 

@@ -58,12 +58,14 @@ export function Navbar() {
                     >
                         Harga & Paket
                     </Link>
-                    <Button
-                        variant="default"
-                        className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6"
-                    >
-                        Mulai Sekarang
-                    </Button>
+                    <Link href="#pricing">
+                        <Button
+                            variant="default"
+                            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6"
+                        >
+                            Join Amandya
+                        </Button>
+                    </Link>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -99,12 +101,14 @@ export function Navbar() {
                         >
                             Harga & Paket
                         </Link>
-                        <Button
-                            variant="default"
-                            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full"
-                        >
-                            Mulai Sekarang
-                        </Button>
+                        <Link href="#pricing" onClick={() => setIsMobileMenuOpen(false)}>
+                            <Button
+                                variant="default"
+                                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full"
+                            >
+                                Join Amandya
+                            </Button>
+                        </Link>
                     </div>
                 )}
             </div>

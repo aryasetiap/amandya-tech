@@ -2,7 +2,8 @@
 
 import { FadeUp } from '@/components/animations/FadeUp';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Zap } from 'lucide-react';
+import Link from 'next/link';
+import { Zap, MessageCircle } from 'lucide-react';
 
 export function BottomCTA() {
     return (
@@ -32,24 +33,32 @@ export function BottomCTA() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button
-                            size="lg"
-                            className="w-full sm:w-auto bg-white text-black hover:bg-white/90 rounded-full px-10 h-14 text-lg font-bold shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all hover:scale-105"
+                        <Link href="#pricing" className="w-full sm:w-auto">
+                            <Button
+                                size="lg"
+                                className="w-full bg-white text-black hover:bg-white/90 rounded-full px-10 h-14 text-lg font-bold shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all hover:scale-105"
+                            >
+                                Gas, Bangun Empire Lo!
+                            </Button>
+                        </Link>
+                        <Link 
+                            href="https://wa.me/6285669644533?text=Halo%20Amandya%20Tech,%20saya%20mau%20konsultasi%20gratis%20dong%20buat%20mulai%20bisnis%20photobooth!" 
+                            target="_blank"
+                            className="w-full sm:w-auto"
                         >
-                            Start 14-Days Free Trial
-                        </Button>
-                        <Button
-                            size="lg"
-                            variant="outline"
-                            className="w-full sm:w-auto rounded-full px-8 h-14 text-lg glass border-white/10 hover:bg-white/5 text-white"
-                        >
-                            Talk to Sales
-                            <ArrowRight className="ml-2 w-5 h-5" />
-                        </Button>
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="w-full rounded-full px-8 h-14 text-lg glass border-white/10 hover:bg-white/5 text-white"
+                            >
+                                <MessageCircle className="mr-2 w-5 h-5 text-emerald-400" />
+                                Konsul Gratis Yuk
+                            </Button>
+                        </Link>
                     </div>
 
-                    <p className="mt-8 text-sm text-white/40">
-                        No credit card required. Cancel anytime.
+                    <p className="mt-8 text-sm text-white/40 italic">
+                        &ldquo;Software all-in-one paling sat-set buat operator photobooth.&rdquo;
                     </p>
                 </FadeUp>
             </div>

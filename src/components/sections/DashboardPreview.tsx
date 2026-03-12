@@ -16,7 +16,7 @@ export function DashboardPreview() {
     const [activeTab, setActiveTab] = useState(TABS[0].id);
 
     return (
-        <section className="py-24 relative overflow-hidden">
+        <section id="how-it-works" className="py-24 relative overflow-hidden">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <FadeUp>

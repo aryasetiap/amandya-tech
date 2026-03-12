@@ -41,7 +41,7 @@ export function FAQSection({ initialFaqs = [] }: { initialFaqs?: FAQItem[] }) {
     const displayFaqs = initialFaqs.length > 0 ? initialFaqs : STATIC_FAQS;
 
     return (
-        <section className="py-24 relative">
+        <section id="faq" className="py-24 relative">
             <div className="container mx-auto px-4 max-w-4xl">
                 <FadeUp className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
