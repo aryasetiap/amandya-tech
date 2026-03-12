@@ -50,6 +50,7 @@
   --radius-xl: calc(var(--radius) + 2px);
 
   --animate-marquee: marquee 40s linear infinite;
+  --animate-scan: scan 4s linear infinite;
 }
 
 @keyframes marquee {
@@ -58,6 +59,23 @@
   }
   to {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes scan {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
   }
 }
 
@@ -150,9 +168,9 @@
     @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl overflow-hidden relative;
   }
 
-  /* Text gradient for Hero */
+  /* New more vibrant text gradient for Hero & Headings */
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-linear-to-r from-[#EBE3D5] to-[#4F83CC];
+    @apply bg-clip-text text-transparent bg-linear-to-r from-accent via-blue-400 to-purple-500;
   }
 
   /* Accent glow for Bento */

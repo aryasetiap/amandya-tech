@@ -11,9 +11,10 @@ interface HeroTypographyProps {
 export function HeroTypography({
     text,
     highlightedWord,
-    className = 'text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6',
+    className = 'text-4xl md:text-6xl lg:text-7xl font-heading font-black tracking-tighter mb-8 max-w-4xl mx-auto',
 }: HeroTypographyProps) {
     const words = text.split(' ');
+    const highlightWords = highlightedWord?.toLowerCase().split(' ') || [];
 
     const container = {
         hidden: { opacity: 0 },
@@ -52,9 +53,14 @@ export function HeroTypography({
             animate="visible"
         >
             {words.map((word, index) => {
-                // Simple case-insensitive match for the highlighted word
-                const isHighlighted =
-                    highlightedWord && word.toLowerCase().includes(highlightedWord.toLowerCase());
+                if (word === '<br/>' || word === '<br>') {
+                    return <br key={`br-${index}`} className="hidden md:block" />;
+                }
+
+                // Check if the current word (case-insensitive) is part of the highlighted phrase
+                const isHighlighted = highlightWords.some(
+                    (hw) => hw === word.toLowerCase() || hw.includes(word.toLowerCase())
+                );
 
                 return (
                     <motion.span
