@@ -41,26 +41,28 @@ export function FAQSection({ initialFaqs = [] }: { initialFaqs?: FAQItem[] }) {
     const displayFaqs = initialFaqs.length > 0 ? initialFaqs : STATIC_FAQS;
 
     return (
-        <section id="faq" className="py-24 relative">
+        <section id="faq" className="py-24 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+            
             <div className="container mx-auto px-4 max-w-4xl">
                 <FadeUp className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
+                    <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6">
                         Yang Sering <span className="text-accent">Ditanyain (FAQ)</span>
                     </h2>
-                    <p className="text-lg text-white/60">
+                    <p className="text-lg text-foreground/60">
                         Ada pertanyaan? Kita punya jawabannya. Butuh bantuan lebih? Tim support kita standby 24/7.
                     </p>
                 </FadeUp>
 
                 <FadeUp delay={0.2}>
-                    <div className="bg-[#0B111A] rounded-2xl border border-white/10 p-6 md:p-8 glass-card">
+                    <div className="bg-card rounded-2xl border border-border p-6 md:p-8 glass-card shadow-sm">
                         <Accordion className="w-full">
                             {displayFaqs.map((faq, i) => (
-                                <AccordionItem key={faq._id || i} value={`item-${i}`} className="border-white/10">
-                                    <AccordionTrigger className="text-left text-white hover:text-accent transition-colors font-medium text-lg py-6">
+                                <AccordionItem key={faq._id || i} value={`item-${i}`} className="border-border">
+                                    <AccordionTrigger className="text-left text-foreground hover:text-accent transition-colors font-medium text-lg py-6">
                                         {faq.question}
                                     </AccordionTrigger>
-                                    <AccordionContent className="text-white/60 leading-relaxed text-base pb-6 pr-6">
+                                    <AccordionContent className="text-foreground/60 leading-relaxed text-base pb-6 pr-6">
                                         {faq.answer}
                                     </AccordionContent>
                                 </AccordionItem>

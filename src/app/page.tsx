@@ -22,8 +22,8 @@ export default async function Home() {
     client.fetch(pricingQuery)
   ]);
 
-  const timeTiers = pricing?.filter((p: any) => p.category === 'time') || [];
-  const tokenTiers = pricing?.filter((p: any) => p.category === 'token') || [];
+  const timeTiers = pricing?.filter((p: { category: string }) => p.category === 'time') || [];
+  const tokenTiers = pricing?.filter((p: { category: string }) => p.category === 'token') || [];
 
   return (
     <div className="flex flex-col min-h-screen">

@@ -161,18 +161,18 @@ export function PricingSection({
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16 max-w-2xl mx-auto">
                     <FadeUp>
-                        <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
+                        <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6">
                             Harga Jujur, Fitur Gak Ngadi-ngadi
                         </h2>
                         
                         {/* Primary Category Toggle */}
                         <div className="flex justify-center mb-8">
-                            <div className="inline-flex p-1 bg-white/5 border border-white/10 rounded-2xl">
+                            <div className="inline-flex p-1 bg-foreground/5 border border-border rounded-2xl shadow-sm">
                                 <button
                                     onClick={() => setCategory('time')}
                                     className={cn(
                                         'px-6 py-2.5 rounded-xl text-sm font-bold transition-all',
-                                        category === 'time' ? 'bg-accent text-white shadow-lg' : 'text-white/50 hover:text-white'
+                                        category === 'time' ? 'bg-accent text-accent-foreground shadow-lg' : 'text-foreground/50 hover:text-foreground'
                                     )}
                                 >
                                     Berdasarkan Waktu
@@ -180,45 +180,45 @@ export function PricingSection({
                                 <button
                                     onClick={() => setCategory('token')}
                                     className={cn(
-                                        'px-6 py-2.5 rounded-xl text-sm font-bold transition-all',
-                                        category === 'token' ? 'bg-accent text-white shadow-lg' : 'text-white/50 hover:text-white'
+                                        'px-6 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap',
+                                        category === 'token' ? 'bg-accent text-accent-foreground shadow-lg' : 'text-foreground/50 hover:text-foreground'
                                     )}
                                 >
-                                    Berdasarkan Token Foto
+                                    Sistem Token
                                 </button>
                             </div>
                         </div>
 
                         {/* Secondary Time Period Toggle */}
                         {category === 'time' && (
-                            <div className="inline-flex items-center p-1 bg-white/5 border border-white/10 rounded-full mb-8">
+                            <div className="flex bg-foreground/5 p-1 rounded-full border border-border">
                                 <button
                                     onClick={() => setPeriod('monthly')}
                                     className={cn(
-                                        'px-4 py-2 rounded-full text-xs font-medium transition-all',
-                                        period === 'monthly' ? 'bg-white/10 text-white' : 'text-white/50 hover:text-white'
+                                        'px-6 py-2 rounded-full text-xs font-bold transition-all',
+                                        period === 'monthly' ? 'bg-background text-foreground shadow-sm' : 'text-foreground/40 hover:text-foreground'
                                     )}
                                 >
-                                    1 Bulan
+                                    Per Bulan
+                                </button>
+                                <button
+                                    onClick={() => setPeriod('yearly')}
+                                    className={cn(
+                                        'px-6 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-2',
+                                        period === 'yearly' ? 'bg-accent text-accent-foreground' : 'text-foreground/50 hover:text-foreground'
+                                    )}
+                                >
+                                    1 Tahun
+                                    <span className="text-[10px] bg-foreground/10 px-1.5 py-0.5 rounded-full">Save More</span>
                                 </button>
                                 <button
                                     onClick={() => setPeriod('sixMonths')}
                                     className={cn(
                                         'px-4 py-2 rounded-full text-xs font-medium transition-all',
-                                        period === 'sixMonths' ? 'bg-white/10 text-white' : 'text-white/50 hover:text-white'
+                                        period === 'sixMonths' ? 'bg-background text-foreground shadow-sm' : 'text-foreground/50 hover:text-foreground'
                                     )}
                                 >
                                     6 Bulan
-                                </button>
-                                <button
-                                    onClick={() => setPeriod('yearly')}
-                                    className={cn(
-                                        'px-4 py-2 rounded-full text-xs font-medium transition-all flex items-center gap-2',
-                                        period === 'yearly' ? 'bg-accent text-white' : 'text-white/50 hover:text-white'
-                                    )}
-                                >
-                                    1 Tahun
-                                    <span className="text-[10px] bg-white/20 px-1.5 py-0.5 rounded-full">Save More</span>
                                 </button>
                             </div>
                         )}
@@ -227,13 +227,15 @@ export function PricingSection({
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10">
                     {(category === 'time' ? displayTimeTiers : displayTokenTiers).map((tier, i) => {
-                        const isTimeTier = (tier as any).category === 'time';
+                        const isTimeTier = category === 'time';
                         const tierId = tier._id || `tier-${i}`;
                         return (
                             <FadeUp key={`${category}-${tierId}`} delay={i * 0.1} className={cn("flex", tier.isPopular && "md:-mt-4 md:mb-4")}>
                                 <div className={cn(
-                                    "flex flex-col w-full p-8 rounded-3xl border transition-all duration-300 glass-card relative overflow-hidden group",
-                                    tier.isPopular ? "border-accent/50 bg-[#0B111A] scale-105 shadow-2xl shadow-accent/10" : "border-white/10 bg-white/2 hover:bg-white/5"
+                                    "flex flex-col w-full p-8 rounded-3xl border transition-all duration-300 glass-card relative overflow-hidden group shadow-sm",
+                                    tier.isPopular 
+                                        ? "border-accent/50 bg-background scale-105 shadow-2xl shadow-accent/10 z-10" 
+                                        : "border-border bg-card/50 hover:bg-foreground/4"
                                 )}>
                                     {tier.isPopular && (
                                         <>
@@ -244,20 +246,20 @@ export function PricingSection({
                                     </>
                                 )}
 
-                                <h3 className="text-xl font-heading font-bold text-white mb-2">{tier.name}</h3>
-                                <p className="text-sm text-white/50 mb-6 min-h-[40px] leading-relaxed italic">
+                                <h3 className="text-xl font-heading font-bold text-foreground mb-2">{tier.name}</h3>
+                                <p className="text-sm text-foreground/50 mb-6 min-h-[40px] leading-relaxed italic">
                                     &ldquo;{tier.description}&rdquo;
                                 </p>
 
                                 <div className="mb-8">
-                                    <span className="text-3xl font-bold text-white">
+                                    <span className="text-3xl font-bold text-foreground">
                                         {isTimeTier 
                                             ? formatIDR((tier as TimeTier).prices?.[period])
                                             : formatIDR((tier as TokenTier).price)
                                         }
                                     </span>
                                     {(isTimeTier ? (tier as TimeTier).prices?.[period] : (tier as TokenTier).price) !== undefined && (
-                                        <span className="text-white/40 text-sm ml-1">
+                                        <span className="text-foreground/40 text-sm ml-1">
                                             /{category === 'time' 
                                                 ? (period === 'monthly' ? 'bulan' : period === 'sixMonths' ? '6bulan' : 'tahun')
                                                 : 'paket'}
@@ -268,10 +270,10 @@ export function PricingSection({
                                 <Button
                                     onClick={() => handleWhatsAppClick(tier.name, category === 'time' ? period : `${tier.name} Token`)}
                                     className={cn(
-                                        "w-full rounded-xl mb-8 font-bold h-12 transition-all group-hover:scale-[1.02]",
+                                        "w-full rounded-xl mb-8 font-bold h-12 transition-all group-hover:scale-[1.02] shadow-md",
                                         tier.isPopular
-                                            ? "bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/20"
-                                            : "glass border-white/10 hover:bg-white/10 text-white"
+                                            ? "bg-accent hover:bg-accent/90 text-accent-foreground shadow-accent/20"
+                                            : "bg-foreground/5 hover:bg-foreground/10 text-foreground border-border"
                                     )}
                                 >
                                     <MessageCircle className="w-4 h-4 mr-2" />
@@ -279,20 +281,20 @@ export function PricingSection({
                                 </Button>
 
                                 <div className="space-y-4">
-                                    <p className="text-xs font-bold text-white/30 uppercase tracking-widest">Fitur Utama</p>
+                                    <p className="text-xs font-bold text-foreground/30 uppercase tracking-widest">Fitur Utama</p>
                                     <ul className="space-y-3">
                                         {tier.features?.map((feature, idx) => (
                                             <li key={`${tier.name}-feature-${idx}`} className="flex items-start gap-3">
                                                 <Check className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                                                <span className="text-sm text-white/70 leading-snug">{feature}</span>
+                                                <span className="text-sm text-foreground/70 leading-snug">{feature}</span>
                                             </li>
                                         ))}
                                     </ul>
                                     
                                     {tier.addons && (
-                                        <div className="pt-4 mt-4 border-t border-white/5">
-                                            <p className="text-xs font-bold text-white/30 uppercase tracking-widest mb-2">Supported Add-ons</p>
-                                            <p className="text-xs text-white/50 leading-relaxed">
+                                        <div className="pt-4 mt-4 border-t border-border">
+                                            <p className="text-xs font-bold text-foreground/30 uppercase tracking-widest mb-2">Supported Add-ons</p>
+                                            <p className="text-xs text-foreground/50 leading-relaxed">
                                                 {tier.addons}
                                             </p>
                                         </div>

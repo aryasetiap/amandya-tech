@@ -7,28 +7,28 @@ import { Zap, MessageCircle } from 'lucide-react';
 
 export function BottomCTA() {
     return (
-        <section className="relative py-32 overflow-hidden border-t border-white/5">
+        <section className="relative py-32 overflow-hidden border-t border-border">
             {/* Massive glow effect behind the CTA */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-accent/20 rounded-full blur-[150px] opacity-50 pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-accent/20 rounded-full blur-[150px] opacity-50 dark:opacity-30 pointer-events-none" />
 
             {/* Grid Pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#0b111a_1px,transparent_1px),linear-gradient(to_bottom,#0b111a_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 pointer-events-none" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-[0.05] dark:opacity-20 pointer-events-none" />
 
             <div className="container mx-auto px-4 relative z-10 text-center">
                 <FadeUp>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-8">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-foreground/3 mb-8 shadow-sm">
                         <Zap className="w-4 h-4 text-accent" />
-                        <span className="text-sm font-medium text-white/80">Udah Siap Level Up?</span>
+                        <span className="text-sm font-medium text-foreground/80">Udah Siap Level Up?</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-7xl font-heading font-black text-white mb-8 tracking-tight max-w-4xl mx-auto">
+                    <h2 className="text-4xl md:text-7xl font-heading font-black text-foreground mb-8 tracking-tight max-w-4xl mx-auto">
                         Bangun Photobooth <br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-accent via-blue-400 to-purple-500">
                             Empire Lo Sekarang
                         </span>
                     </h2>
 
-                    <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-xl text-foreground/60 mb-12 max-w-2xl mx-auto leading-relaxed">
                         Join ribuan operator sukses yang udah otomatisin workflow dan boost revenue mereka bareng Amandya Tech.
                     </p>
 
@@ -36,7 +36,7 @@ export function BottomCTA() {
                         <Link href="#pricing" className="w-full sm:w-auto">
                             <Button
                                 size="lg"
-                                className="w-full bg-white text-black hover:bg-white/90 rounded-full px-10 h-14 text-lg font-bold shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all hover:scale-105"
+                                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-10 h-14 text-lg font-bold shadow-xl dark:shadow-primary/20 transition-all hover:scale-105"
                             >
                                 Gas, Bangun Empire Lo!
                             </Button>
@@ -49,15 +49,15 @@ export function BottomCTA() {
                             <Button
                                 size="lg"
                                 variant="outline"
-                                className="w-full rounded-full px-8 h-14 text-lg glass border-white/10 hover:bg-white/5 text-white"
+                                className="w-full rounded-full px-8 h-14 text-lg glass border-border hover:bg-foreground/5 text-foreground"
                             >
-                                <MessageCircle className="mr-2 w-5 h-5 text-emerald-400" />
+                                <MessageCircle className="mr-2 w-5 h-5 text-emerald-500" />
                                 Konsul Gratis Yuk
                             </Button>
                         </Link>
                     </div>
 
-                    <p className="mt-8 text-sm text-white/40 italic">
+                    <p className="mt-8 text-sm text-foreground/40 italic">
                         &ldquo;Software all-in-one paling sat-set buat operator photobooth.&rdquo;
                     </p>
                 </FadeUp>

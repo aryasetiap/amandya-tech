@@ -36,19 +36,19 @@ const ADDONS = [
 
 export function AddonEcosystem() {
     return (
-        <section className="py-24 border-y border-white/5 bg-white/1">
+        <section className="py-24 border-y border-border bg-foreground/1">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-12 mb-16">
                     <div className="flex-1">
                         <FadeUp>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-foreground/5 border border-border mb-6">
                                 <Sparkles className="w-4 h-4 text-accent" />
-                                <span className="text-sm font-medium text-white/80">Arsitektur Super Sat Set</span>
+                                <span className="text-sm font-medium text-foreground/80">Arsitektur Super Sat Set</span>
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
+                            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6">
                                 Makin Pro dengan <span className="text-accent text-gradient">Custom Add-ons</span>
                             </h2>
-                            <p className="text-lg text-white/60 max-w-xl">
+                            <p className="text-lg text-foreground/60 max-w-xl">
                                 Mulai dari core software, dan tambah modul premium kapan pun bisnis lo butuh scale up. Amandya Tech siap tumbuh bareng lo.
                             </p>
                         </FadeUp>
@@ -58,14 +58,14 @@ export function AddonEcosystem() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {ADDONS.map((addon, i) => (
                         <FadeUp key={i} delay={i * 0.1}>
-                            <div className="h-full group p-6 rounded-2xl bg-white/5 border border-white/10 glass-card hover:bg-white/10 transition-colors">
-                                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${addon.color} ${addon.border} border`}>
+                            <div className="h-full group p-6 rounded-2xl bg-card border border-border glass-card hover:bg-foreground/4 transition-all duration-300 shadow-sm hover:shadow-md">
+                                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${addon.color} ${addon.border} border transition-transform group-hover:scale-110`}>
                                     {addon.icon}
                                 </div>
-                                <h3 className="text-xl font-bold font-heading text-white mb-3 group-hover:text-accent transition-colors">
+                                <h3 className="text-xl font-bold font-heading text-foreground mb-3 group-hover:text-accent transition-colors">
                                     {addon.title}
                                 </h3>
-                                <p className="text-sm text-white/60 leading-relaxed">
+                                <p className="text-sm text-foreground/60 leading-relaxed">
                                     {addon.description}
                                 </p>
                             </div>

@@ -67,7 +67,7 @@ export function HeroTypography({
                         variants={child}
                         style={{ display: 'inline-block', marginRight: '0.25em' }}
                         key={index}
-                        className={isHighlighted ? 'text-gradient' : 'text-white'}
+                        className={isHighlighted ? 'text-gradient' : 'text-foreground'}
                     >
                         {word}
                     </motion.span>

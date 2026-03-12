@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 export interface GalleryImage {
     _id?: string;
-    image: any;
+    image: string;
     filename?: string;
 }
 
@@ -33,24 +33,24 @@ export function DashboardPreview({ initialImages = [] }: { initialImages?: Galle
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <FadeUp>
-                        <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
+                        <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6">
                             Pantau Semua Booth Lo <span className="text-accent text-gradient">dari Mana Aja</span>
                         </h2>
-                        <p className="text-lg text-white/60">
+                        <p className="text-lg text-foreground/60">
                             Pantau banyak titik photobooth sekaligus. Update template, cek hardware status, sampe buka Live Gallery, semuanya serba instan dari satu Cloud Dashboard.
                         </p>
                     </FadeUp>
                 </div>
 
                 <FadeUp delay={0.2} className="max-w-5xl mx-auto">
-                    <div className="rounded-2xl border border-white/10 bg-[#0B111A]/80 glass-card shadow-2xl overflow-hidden backdrop-blur-xl">
+                    <div className="rounded-2xl border border-border bg-card/80 glass-card shadow-2xl overflow-hidden backdrop-blur-xl">
                         {/* Top Bar Navigation */}
-                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 border-b border-white/10 bg-white/5 gap-4">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 border-b border-border bg-foreground/5 gap-4">
                             <div className="flex items-center gap-2 px-2">
                                 <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
                                     <Settings className="w-4 h-4 text-accent" />
                                 </div>
-                                <span className="font-heading font-semibold text-white">Amandya Cloud</span>
+                                <span className="font-heading font-semibold text-foreground">Amandya Cloud</span>
                             </div>
 
                             <div className="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-2 sm:pb-0 scrollbar-hide">
@@ -61,8 +61,8 @@ export function DashboardPreview({ initialImages = [] }: { initialImages?: Galle
                                         className={cn(
                                             'flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap',
                                             activeTab === tab.id
-                                                ? 'bg-accent text-white shadow-lg shadow-accent/20'
-                                                : 'text-white/60 hover:text-white hover:bg-white/5'
+                                                ? 'bg-accent text-accent-foreground shadow-lg shadow-accent/20'
+                                                : 'text-foreground/60 hover:text-foreground hover:bg-foreground/5'
                                         )}
                                     >
                                         {tab.icon}
@@ -86,7 +86,7 @@ export function DashboardPreview({ initialImages = [] }: { initialImages?: Galle
                                         className="grid grid-cols-2 md:grid-cols-4 gap-4"
                                     >
                                         {displayImages.map((img, i) => (
-                                            <div key={img._id || i} className="aspect-square rounded-xl bg-white/5 border border-white/10 animate-pulse-slow relative overflow-hidden group">
+                                            <div key={img._id || i} className="aspect-square rounded-xl bg-foreground/5 border border-border animate-pulse-slow relative overflow-hidden group">
                                                 {img.image ? (
                                                     <Image 
                                                         src={img.image} 
@@ -98,12 +98,12 @@ export function DashboardPreview({ initialImages = [] }: { initialImages?: Galle
                                                     />
                                                 ) : (
                                                     <div className="absolute inset-0 bg-accent/5 flex items-center justify-center">
-                                                        <ImageIcon className="w-8 h-8 text-white/10" />
+                                                        <ImageIcon className="w-8 h-8 text-foreground/10" />
                                                     </div>
                                                 )}
                                                 <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                                <div className="absolute bottom-2 left-2 right-2 h-1/3 bg-linear-to-t from-black/80 to-transparent flex items-end p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                    <span className="text-[10px] text-white/80">{img.filename}</span>
+                                                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-linear-to-t from-black/60 to-transparent flex items-end p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                    <span className="text-[10px] text-white font-medium">{img.filename}</span>
                                                 </div>
                                             </div>
                                         ))}
@@ -125,22 +125,22 @@ export function DashboardPreview({ initialImages = [] }: { initialImages?: Galle
                                             { name: 'Corporate Event B', status: 'Online', battery: '85%', type: 'Webcam' },
                                             { name: 'Backup Unit C', status: 'Offline', battery: '0%', type: 'DSLR' },
                                         ].map((device, i) => (
-                                            <div key={i} className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                                            <div key={i} className="flex items-center justify-between p-4 rounded-xl bg-foreground/5 border border-border hover:bg-foreground/10 transition-colors">
                                                 <div className="flex items-center gap-4">
-                                                    <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center", device.status === 'Online' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-white/10 text-white/40')}>
+                                                    <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center", device.status === 'Online' ? 'bg-emerald-500/20 text-emerald-500' : 'bg-foreground/10 text-foreground/40')}>
                                                         <Camera className="w-5 h-5" />
                                                     </div>
                                                     <div>
-                                                        <h4 className="text-white font-medium">{device.name}</h4>
-                                                        <div className="flex items-center gap-2 text-xs text-white/50">
+                                                        <h4 className="text-foreground font-medium">{device.name}</h4>
+                                                        <div className="flex items-center gap-2 text-xs text-foreground/50">
                                                             <span className={cn("w-2 h-2 rounded-full", device.status === 'Online' ? 'bg-emerald-500' : 'bg-red-500')} />
                                                             {device.status} • {device.type}
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="text-right hidden sm:block">
-                                                    <div className="text-sm text-white/80">Baterai</div>
-                                                    <div className="text-xs text-white/50">{device.battery}</div>
+                                                    <div className="text-sm text-foreground/80">Baterai</div>
+                                                    <div className="text-xs text-foreground/50">{device.battery}</div>
                                                 </div>
                                             </div>
                                         ))}
@@ -157,22 +157,22 @@ export function DashboardPreview({ initialImages = [] }: { initialImages?: Galle
                                         transition={{ duration: 0.3 }}
                                         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
                                     >
-                                        <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                                            <div className="text-sm text-white/60 mb-2">Total Jepretan Hari Ini</div>
-                                            <div className="text-4xl font-bold text-white mb-2">1,284</div>
-                                            <div className="text-xs text-emerald-400 flex items-center gap-1">+12% vs kemarin</div>
+                                        <div className="p-6 rounded-xl bg-foreground/5 border border-border">
+                                            <div className="text-sm text-foreground/60 mb-2">Total Jepretan Hari Ini</div>
+                                            <div className="text-4xl font-bold text-foreground mb-2">1,284</div>
+                                            <div className="text-xs text-emerald-500 flex items-center gap-1">+12% vs kemarin</div>
                                         </div>
-                                        <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                                            <div className="text-sm text-white/60 mb-2">Email yg Terkumpul</div>
-                                            <div className="text-4xl font-bold text-white mb-2">842</div>
-                                            <div className="text-xs text-emerald-400 flex items-center gap-1">+5% vs kemarin</div>
+                                        <div className="p-6 rounded-xl bg-foreground/5 border border-border">
+                                            <div className="text-sm text-foreground/60 mb-2">Email yg Terkumpul</div>
+                                            <div className="text-4xl font-bold text-foreground mb-2">842</div>
+                                            <div className="text-xs text-emerald-500 flex items-center gap-1">+5% vs kemarin</div>
                                         </div>
-                                        <div className="p-6 rounded-xl bg-white/5 border border-white/10 sm:col-span-2 md:col-span-1">
-                                            <div className="text-sm text-white/60 mb-2">Event Aktif</div>
-                                            <div className="text-4xl font-bold text-white mb-2">3</div>
-                                            <div className="text-xs text-white/40 flex items-center gap-1">Di 2 kota berbeda</div>
+                                        <div className="p-6 rounded-xl bg-foreground/5 border border-border sm:col-span-2 md:col-span-1">
+                                            <div className="text-sm text-foreground/60 mb-2">Event Aktif</div>
+                                            <div className="text-4xl font-bold text-foreground mb-2">3</div>
+                                            <div className="text-xs text-foreground/40 flex items-center gap-1">Di 2 kota berbeda</div>
                                         </div>
-                                        <div className="col-span-1 sm:col-span-2 md:col-span-3 h-48 rounded-xl bg-white/5 border border-white/10 flex items-end gap-2 p-6">
+                                        <div className="col-span-1 sm:col-span-2 md:col-span-3 h-48 rounded-xl bg-foreground/5 border border-border flex items-end gap-2 p-6">
                                             {/* Fake bar chart */}
                                             {[20, 40, 30, 70, 50, 90, 60, 100, 80, 40, 60, 50].map((h, i) => (
                                                 <div key={i} className="flex-1 bg-accent/40 rounded-t hover:bg-accent transition-colors cursor-pointer" style={{ height: `${h}%` }} />

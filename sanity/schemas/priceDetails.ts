@@ -1,5 +1,3 @@
-import type { Rule } from 'sanity';
-
 export const priceDetailsType = {
   name: 'priceDetails',
   title: 'Price Details',

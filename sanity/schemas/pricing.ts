@@ -24,22 +24,16 @@ export const pricingType = {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-      rows: 2,
-    },
-    {
       name: 'prices',
       title: 'Prices (for Time-based)',
       type: 'priceDetails',
-      hidden: ({ document }: { document: any }) => document?.category !== 'time',
+      hidden: ({ document }: { document: { category?: string } }) => document?.category !== 'time',
     },
     {
       name: 'price',
       title: 'Price (for Token-based)',
       type: 'number',
-      hidden: ({ document }: { document: any }) => document?.category !== 'token',
+      hidden: ({ document }: { document: { category?: string } }) => document?.category !== 'token',
     },
     {
       name: 'features',
