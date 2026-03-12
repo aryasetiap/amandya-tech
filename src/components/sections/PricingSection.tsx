@@ -125,7 +125,8 @@ const TOKEN_TIERS: TokenTier[] = [
     },
 ];
 
-const formatIDR = (amount: number) => {
+const formatIDR = (amount: number | undefined | null) => {
+    if (amount === undefined || amount === null) return 'Hubungi Kami';
     return new Intl.NumberFormat('id-ID', {
         style: 'currency',
         currency: 'IDR',
@@ -226,7 +227,7 @@ export function PricingSection({
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10">
                     {(category === 'time' ? displayTimeTiers : displayTokenTiers).map((tier, i) => {
-                        const isTimeTier = 'prices' in tier;
+                        const isTimeTier = (tier as any).category === 'time';
                         const tierId = tier._id || `tier-${i}`;
                         return (
                             <FadeUp key={`${category}-${tierId}`} delay={i * 0.1} className={cn("flex", tier.isPopular && "md:-mt-4 md:mb-4")}>
@@ -251,15 +252,17 @@ export function PricingSection({
                                 <div className="mb-8">
                                     <span className="text-3xl font-bold text-white">
                                         {isTimeTier 
-                                            ? formatIDR((tier as TimeTier).prices[period])
+                                            ? formatIDR((tier as TimeTier).prices?.[period])
                                             : formatIDR((tier as TokenTier).price)
                                         }
                                     </span>
-                                    <span className="text-white/40 text-sm ml-1">
-                                        /{category === 'time' 
-                                            ? (period === 'monthly' ? 'bulan' : period === 'sixMonths' ? '6bulan' : 'tahun')
-                                            : 'paket'}
-                                    </span>
+                                    {(isTimeTier ? (tier as TimeTier).prices?.[period] : (tier as TokenTier).price) !== undefined && (
+                                        <span className="text-white/40 text-sm ml-1">
+                                            /{category === 'time' 
+                                                ? (period === 'monthly' ? 'bulan' : period === 'sixMonths' ? '6bulan' : 'tahun')
+                                                : 'paket'}
+                                        </span>
+                                    )}
                                 </div>
 
                                 <Button
@@ -278,7 +281,7 @@ export function PricingSection({
                                 <div className="space-y-4">
                                     <p className="text-xs font-bold text-white/30 uppercase tracking-widest">Fitur Utama</p>
                                     <ul className="space-y-3">
-                                        {tier.features.map((feature, idx) => (
+                                        {tier.features?.map((feature, idx) => (
                                             <li key={`${tier.name}-feature-${idx}`} className="flex items-start gap-3">
                                                 <Check className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                                                 <span className="text-sm text-white/70 leading-snug">{feature}</span>

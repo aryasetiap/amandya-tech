@@ -32,7 +32,7 @@ export const galleryQuery = groq`
 export const pricingQuery = groq`
   *[_type == "pricing"] | order(_createdAt asc) {
     _id,
-    title,
+    "name": title,
     category,
     description,
     prices,
