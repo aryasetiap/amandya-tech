@@ -12,6 +12,8 @@ const Testimonials = dynamic(() => import('@/components/sections/Testimonials').
 const FAQSection = dynamic(() => import('@/components/sections/FAQSection').then(mod => mod.FAQSection), { ssr: true });
 const BottomCTA = dynamic(() => import('@/components/sections/BottomCTA').then(mod => mod.BottomCTA), { ssr: true });
 
+export const revalidate = 60; // revalidate every minute
+
 export default async function Home() {
   const [testimonials, faqs, gallery, pricing] = await Promise.all([
     client.fetch(testimonialsQuery),
