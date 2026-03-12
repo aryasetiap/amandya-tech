@@ -5,6 +5,13 @@ import { FadeUp } from '@/components/animations/FadeUp';
 import { cn } from '@/lib/utils';
 import { Camera, Image as ImageIcon, LayoutDashboard, Settings, Smartphone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+
+export interface GalleryImage {
+    _id?: string;
+    image: any;
+    filename?: string;
+}
 
 const TABS = [
     { id: 'gallery', label: 'Live Gallery', icon: <ImageIcon className="w-4 h-4" /> },
@@ -12,8 +19,14 @@ const TABS = [
     { id: 'analytics', label: 'Analitik Real-time', icon: <LayoutDashboard className="w-4 h-4" /> },
 ];
 
-export function DashboardPreview() {
+export function DashboardPreview({ initialImages = [] }: { initialImages?: GalleryImage[] }) {
     const [activeTab, setActiveTab] = useState(TABS[0].id);
+
+    const displayImages = initialImages.length > 0 ? initialImages : [...Array(8)].map((_, i) => ({
+        _id: `skeleton-${i}`,
+        image: null,
+        filename: `IMG_890${i + 1}.JPG`
+    }));
 
     return (
         <section id="how-it-works" className="py-24 relative overflow-hidden">
@@ -72,11 +85,25 @@ export function DashboardPreview() {
                                         transition={{ duration: 0.3 }}
                                         className="grid grid-cols-2 md:grid-cols-4 gap-4"
                                     >
-                                        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                                            <div key={i} className="aspect-square rounded-xl bg-white/5 border border-white/10 animate-pulse-slow relative overflow-hidden group">
+                                        {displayImages.map((img, i) => (
+                                            <div key={img._id || i} className="aspect-square rounded-xl bg-white/5 border border-white/10 animate-pulse-slow relative overflow-hidden group">
+                                                {img.image ? (
+                                                    <Image 
+                                                        src={img.image} 
+                                                        alt={img.filename || 'Gallery item'}
+                                                        fill
+                                                        sizes="(max-width: 768px) 50vw, 20vw"
+                                                        className="object-cover transition-transform group-hover:scale-110"
+                                                        priority={i < 4}
+                                                    />
+                                                ) : (
+                                                    <div className="absolute inset-0 bg-accent/5 flex items-center justify-center">
+                                                        <ImageIcon className="w-8 h-8 text-white/10" />
+                                                    </div>
+                                                )}
                                                 <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                                                 <div className="absolute bottom-2 left-2 right-2 h-1/3 bg-linear-to-t from-black/80 to-transparent flex items-end p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                    <span className="text-[10px] text-white/80">IMG_{8900 + i}.JPG</span>
+                                                    <span className="text-[10px] text-white/80">{img.filename}</span>
                                                 </div>
                                             </div>
                                         ))}

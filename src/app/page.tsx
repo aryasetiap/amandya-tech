@@ -2,7 +2,7 @@ import { Hero } from '@/components/sections/Hero';
 import { SocialProof } from '@/components/sections/SocialProof';
 import { FeaturesBento } from '@/components/sections/FeaturesBento';
 import { client } from '@/lib/sanity.client';
-import { testimonialsQuery, faqsQuery } from '@/lib/sanity.queries';
+import { testimonialsQuery, faqsQuery, galleryQuery, pricingQuery } from '@/lib/sanity.queries';
 import dynamic from 'next/dynamic';
 
 const DashboardPreview = dynamic(() => import('@/components/sections/DashboardPreview').then(mod => mod.DashboardPreview), { ssr: true });
@@ -13,19 +13,24 @@ const FAQSection = dynamic(() => import('@/components/sections/FAQSection').then
 const BottomCTA = dynamic(() => import('@/components/sections/BottomCTA').then(mod => mod.BottomCTA), { ssr: true });
 
 export default async function Home() {
-  const [testimonials, faqs] = await Promise.all([
+  const [testimonials, faqs, gallery, pricing] = await Promise.all([
     client.fetch(testimonialsQuery),
-    client.fetch(faqsQuery)
+    client.fetch(faqsQuery),
+    client.fetch(galleryQuery),
+    client.fetch(pricingQuery)
   ]);
+
+  const timeTiers = pricing?.filter((p: any) => p.category === 'time') || [];
+  const tokenTiers = pricing?.filter((p: any) => p.category === 'token') || [];
 
   return (
     <div className="flex flex-col min-h-screen">
       <Hero />
       <SocialProof />
       <FeaturesBento />
-      <DashboardPreview />
+      <DashboardPreview initialImages={gallery} />
       <AddonEcosystem />
-      <PricingSection />
+      <PricingSection initialTimeTiers={timeTiers} initialTokenTiers={tokenTiers} />
       <Testimonials initialTestimonials={testimonials} />
       <FAQSection initialFaqs={faqs} />
       <BottomCTA />

@@ -24,6 +24,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('http://localhost:3000'),
   title: "Amandya Tech | Smart Interactive Photobooth Software System",
   description: "Revolusi bisnis photobooth lo dengan software interaktif Amandya Tech. Dilengkapi fitur Live Mode, Dual Camera, otomatis form consent, dan management dashboard cloud terpusat.",
   keywords: ["Software photobooth Indonesia", "Photobooth Software", "Amandya Tech", "Live Gallery Photobooth", "Automasi Photobooth", "Digital Consent"],

@@ -19,3 +19,26 @@ export const faqsQuery = groq`
     order
   }
 `;
+
+export const galleryQuery = groq`
+  *[_type == "gallery"] | order(order asc) {
+    _id,
+    "image": image.asset->url,
+    filename,
+    order
+  }
+`;
+
+export const pricingQuery = groq`
+  *[_type == "pricing"] | order(_createdAt asc) {
+    _id,
+    title,
+    category,
+    description,
+    prices,
+    price,
+    features,
+    addons,
+    isPopular
+  }
+`;

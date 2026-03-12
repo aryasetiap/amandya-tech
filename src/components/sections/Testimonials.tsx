@@ -68,7 +68,14 @@ export function Testimonials({ initialTestimonials = [] }: { initialTestimonials
                             <div>
                                 <h4 className="font-heading font-bold text-white mb-1 flex items-center gap-3">
                                     {t.avatarUrl && (
-                                        <Image src={t.avatarUrl} alt={t.name} width={32} height={32} className="rounded-full object-cover" />
+                                        <Image 
+                                            src={t.avatarUrl} 
+                                            alt={t.name} 
+                                            width={32} 
+                                            height={32} 
+                                            sizes="32px"
+                                            className="rounded-full object-cover" 
+                                        />
                                     )}
                                     {t.name}
                                 </h4>
@@ -91,7 +98,14 @@ export function Testimonials({ initialTestimonials = [] }: { initialTestimonials
                             <div>
                                 <h4 className="font-heading font-bold text-white mb-1 flex items-center gap-3">
                                     {t.avatarUrl && (
-                                        <Image src={t.avatarUrl} alt={t.name} width={32} height={32} className="rounded-full object-cover" />
+                                        <Image 
+                                            src={t.avatarUrl} 
+                                            alt={t.name} 
+                                            width={32} 
+                                            height={32} 
+                                            sizes="32px"
+                                            className="rounded-full object-cover" 
+                                        />
                                     )}
                                     {t.name}
                                 </h4>

@@ -10,6 +10,7 @@ type BillingPeriod = 'monthly' | 'sixMonths' | 'yearly';
 type PricingCategory = 'time' | 'token';
 
 interface BaseTier {
+    _id?: string;
     name: string;
     description: string;
     features: string[];
@@ -226,8 +227,9 @@ export function PricingSection({
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10">
                     {(category === 'time' ? displayTimeTiers : displayTokenTiers).map((tier, i) => {
                         const isTimeTier = 'prices' in tier;
+                        const tierId = tier._id || `tier-${i}`;
                         return (
-                            <FadeUp key={tier.name} delay={i * 0.1} className={cn("flex", tier.isPopular && "md:-mt-4 md:mb-4")}>
+                            <FadeUp key={`${category}-${tierId}`} delay={i * 0.1} className={cn("flex", tier.isPopular && "md:-mt-4 md:mb-4")}>
                                 <div className={cn(
                                     "flex flex-col w-full p-8 rounded-3xl border transition-all duration-300 glass-card relative overflow-hidden group",
                                     tier.isPopular ? "border-accent/50 bg-[#0B111A] scale-105 shadow-2xl shadow-accent/10" : "border-white/10 bg-white/2 hover:bg-white/5"
@@ -276,8 +278,8 @@ export function PricingSection({
                                 <div className="space-y-4">
                                     <p className="text-xs font-bold text-white/30 uppercase tracking-widest">Fitur Utama</p>
                                     <ul className="space-y-3">
-                                        {tier.features.map(feature => (
-                                            <li key={feature} className="flex items-start gap-3">
+                                        {tier.features.map((feature, idx) => (
+                                            <li key={`${tier.name}-feature-${idx}`} className="flex items-start gap-3">
                                                 <Check className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                                                 <span className="text-sm text-white/70 leading-snug">{feature}</span>
                                             </li>
