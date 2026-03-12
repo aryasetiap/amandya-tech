@@ -32,13 +32,8 @@ export const pricingType = {
     {
       name: 'prices',
       title: 'Prices (for Time-based)',
-      type: 'object',
+      type: 'priceDetails',
       hidden: ({ document }: { document: any }) => document?.category !== 'time',
-      fields: [
-        { name: 'monthly', title: 'Monthly Price', type: 'number' },
-        { name: 'sixMonths', title: '6 Months Price', type: 'number' },
-        { name: 'yearly', title: 'Yearly Price', type: 'number' },
-      ],
     },
     {
       name: 'price',
