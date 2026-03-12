@@ -17,6 +17,11 @@ export const testimonialType = {
       type: 'string',
     },
     {
+      name: 'role',
+      title: 'Role/Position',
+      type: 'string',
+    },
+    {
       name: 'content',
       title: 'Content',
       type: 'text',

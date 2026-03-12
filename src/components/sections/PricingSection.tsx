@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Check, MessageCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-type BillingPeriod = '1bulan' | '6bulan' | '1tahun';
+type BillingPeriod = 'monthly' | 'sixMonths' | 'yearly';
 type PricingCategory = 'time' | 'token';
 
 interface BaseTier {
@@ -31,9 +31,9 @@ const TIME_TIERS: TimeTier[] = [
         name: 'Lite',
         description: 'Webcam/DSLR + Windows OS. Pas buat independent operator yang mau mulai hustle.',
         prices: {
-            '1bulan': 650000,
-            '6bulan': 3500000,
-            '1tahun': 6000000,
+            monthly: 650000,
+            sixMonths: 3500000,
+            yearly: 6000000,
         },
         features: [
             'Cam Shutter Mode',
@@ -52,9 +52,9 @@ const TIME_TIERS: TimeTier[] = [
         description: 'Upgrade workflow lo dengan fitur Live Mode dan Extra Print support.',
         isPopular: true,
         prices: {
-            '1bulan': 1000000,
-            '6bulan': 5500000,
-            '1tahun': 10000000,
+            monthly: 1000000,
+            sixMonths: 5500000,
+            yearly: 10000000,
         },
         features: [
             'Everything in Lite',
@@ -70,9 +70,9 @@ const TIME_TIERS: TimeTier[] = [
         name: 'Pro',
         description: 'Full white-label & custom experience. Bangun empire photobooth lo sekarang.',
         prices: {
-            '1bulan': 1500000,
-            '6bulan': 7500000,
-            '1tahun': 13000000,
+            monthly: 1500000,
+            sixMonths: 7500000,
+            yearly: 13000000,
         },
         features: [
             'Everything in Basic',
@@ -133,12 +133,22 @@ const formatIDR = (amount: number) => {
     }).format(amount);
 };
 
-export function PricingSection() {
+export function PricingSection({ 
+    initialTimeTiers = [], 
+    initialTokenTiers = [] 
+}: { 
+    initialTimeTiers?: TimeTier[];
+    initialTokenTiers?: TokenTier[];
+}) {
     const [category, setCategory] = useState<PricingCategory>('time');
-    const [period, setPeriod] = useState<BillingPeriod>('1tahun');
+    const [period, setPeriod] = useState<BillingPeriod>('yearly');
+
+    const displayTimeTiers = initialTimeTiers.length > 0 ? initialTimeTiers : TIME_TIERS;
+    const displayTokenTiers = initialTokenTiers.length > 0 ? initialTokenTiers : TOKEN_TIERS;
 
     const handleWhatsAppClick = (planName: string, detail: string) => {
-        const message = encodeURIComponent(`Halo Amandya Tech, saya tertarik dengan paket ${planName} (${detail}). Bisa bantu info lebih lanjut?`);
+        const periodLabel = detail === 'monthly' ? 'Bulanan' : detail === 'sixMonths' ? '6 Bulan' : '1 Tahun';
+        const message = encodeURIComponent(`Halo Amandya Tech, saya tertarik dengan paket ${planName} (${periodLabel}). Bisa bantu info lebih lanjut?`);
         window.open(`https://wa.me/6285669644533?text=${message}`, '_blank');
     };
 
@@ -181,28 +191,28 @@ export function PricingSection() {
                         {category === 'time' && (
                             <div className="inline-flex items-center p-1 bg-white/5 border border-white/10 rounded-full mb-8">
                                 <button
-                                    onClick={() => setPeriod('1bulan')}
+                                    onClick={() => setPeriod('monthly')}
                                     className={cn(
                                         'px-4 py-2 rounded-full text-xs font-medium transition-all',
-                                        period === '1bulan' ? 'bg-white/10 text-white' : 'text-white/50 hover:text-white'
+                                        period === 'monthly' ? 'bg-white/10 text-white' : 'text-white/50 hover:text-white'
                                     )}
                                 >
                                     1 Bulan
                                 </button>
                                 <button
-                                    onClick={() => setPeriod('6bulan')}
+                                    onClick={() => setPeriod('sixMonths')}
                                     className={cn(
                                         'px-4 py-2 rounded-full text-xs font-medium transition-all',
-                                        period === '6bulan' ? 'bg-white/10 text-white' : 'text-white/50 hover:text-white'
+                                        period === 'sixMonths' ? 'bg-white/10 text-white' : 'text-white/50 hover:text-white'
                                     )}
                                 >
                                     6 Bulan
                                 </button>
                                 <button
-                                    onClick={() => setPeriod('1tahun')}
+                                    onClick={() => setPeriod('yearly')}
                                     className={cn(
                                         'px-4 py-2 rounded-full text-xs font-medium transition-all flex items-center gap-2',
-                                        period === '1tahun' ? 'bg-accent text-white' : 'text-white/50 hover:text-white'
+                                        period === 'yearly' ? 'bg-accent text-white' : 'text-white/50 hover:text-white'
                                     )}
                                 >
                                     1 Tahun
@@ -214,7 +224,7 @@ export function PricingSection() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10">
-                    {(category === 'time' ? TIME_TIERS : TOKEN_TIERS).map((tier, i) => {
+                    {(category === 'time' ? displayTimeTiers : displayTokenTiers).map((tier, i) => {
                         const isTimeTier = 'prices' in tier;
                         return (
                             <FadeUp key={tier.name} delay={i * 0.1} className={cn("flex", tier.isPopular && "md:-mt-4 md:mb-4")}>
@@ -244,7 +254,9 @@ export function PricingSection() {
                                         }
                                     </span>
                                     <span className="text-white/40 text-sm ml-1">
-                                        /{category === 'time' ? period.replace('1', '') : 'paket'}
+                                        /{category === 'time' 
+                                            ? (period === 'monthly' ? 'bulan' : period === 'sixMonths' ? '6bulan' : 'tahun')
+                                            : 'paket'}
                                     </span>
                                 </div>
 

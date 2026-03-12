@@ -12,15 +12,39 @@ export const pricingType = {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: 'price',
-      title: 'Monthly Price',
-      type: 'number',
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Based on Time', value: 'time' },
+          { title: 'Based on Token', value: 'token' },
+        ],
+      },
       validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: 'description',
       title: 'Description',
       type: 'text',
+      rows: 2,
+    },
+    {
+      name: 'prices',
+      title: 'Prices (for Time-based)',
+      type: 'object',
+      hidden: ({ document }: { document: any }) => document?.category !== 'time',
+      fields: [
+        { name: 'monthly', title: 'Monthly Price', type: 'number' },
+        { name: 'sixMonths', title: '6 Months Price', type: 'number' },
+        { name: 'yearly', title: 'Yearly Price', type: 'number' },
+      ],
+    },
+    {
+      name: 'price',
+      title: 'Price (for Token-based)',
+      type: 'number',
+      hidden: ({ document }: { document: any }) => document?.category !== 'token',
     },
     {
       name: 'features',
@@ -29,8 +53,14 @@ export const pricingType = {
       of: [{ type: 'string' }],
     },
     {
+      name: 'addons',
+      title: 'Supported Add-ons',
+      type: 'string',
+      description: 'Comma separated list of addons',
+    },
+    {
       name: 'isPopular',
-      title: 'Is Popular (Decoy)',
+      title: 'Is Popular',
       type: 'boolean',
       initialValue: false,
     },
