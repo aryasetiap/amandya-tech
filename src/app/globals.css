@@ -48,7 +48,19 @@
   --radius-md: calc(var(--radius) - 1px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 2px);
+
+  --animate-marquee: marquee 40s linear infinite;
 }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 
 /* Light mode (fallback if toggled, but we default to dark below) */
 :root {
@@ -146,6 +158,10 @@
   /* Accent glow for Bento */
   .glow-accent {
     box-shadow: 0 0 20px 2px rgba(79, 131, 204, 0.4);
+  }
+
+  .pause {
+    animation-play-state: paused;
   }
 }
 

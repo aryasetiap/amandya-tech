@@ -9,7 +9,24 @@ import { cn } from '@/lib/utils';
 type BillingPeriod = '1bulan' | '6bulan' | '1tahun';
 type PricingCategory = 'time' | 'token';
 
-const TIME_TIERS = [
+interface BaseTier {
+    name: string;
+    description: string;
+    features: string[];
+    isPopular?: boolean;
+}
+
+interface TimeTier extends BaseTier {
+    prices: Record<BillingPeriod, number>;
+    addons: string;
+}
+
+interface TokenTier extends BaseTier {
+    price: number;
+    addons?: string;
+}
+
+const TIME_TIERS: TimeTier[] = [
     {
         name: 'Lite',
         description: 'Webcam/DSLR + Windows OS. Pas buat independent operator yang mau mulai hustle.',
@@ -70,7 +87,7 @@ const TIME_TIERS = [
     },
 ];
 
-const TOKEN_TIERS = [
+const TOKEN_TIERS: TokenTier[] = [
     {
         name: '300 Foto',
         description: 'Ideal buat event kecil atau wedding party satu hari.',
@@ -197,15 +214,17 @@ export function PricingSection() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10">
-                    {(category === 'time' ? TIME_TIERS : TOKEN_TIERS).map((tier, i) => (
-                        <FadeUp key={tier.name} delay={i * 0.1} className={cn("flex", (tier as any).isPopular && "md:-mt-4 md:mb-4")}>
-                            <div className={cn(
-                                "flex flex-col w-full p-8 rounded-3xl border transition-all duration-300 glass-card relative overflow-hidden group",
-                                (tier as any).isPopular ? "border-accent/50 bg-[#0B111A] scale-105 shadow-2xl shadow-accent/10" : "border-white/10 bg-white/2 hover:bg-white/5"
-                            )}>
-                                {(tier as any).isPopular && (
-                                    <>
-                                        <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-accent to-transparent" />
+                    {(category === 'time' ? TIME_TIERS : TOKEN_TIERS).map((tier, i) => {
+                        const isTimeTier = 'prices' in tier;
+                        return (
+                            <FadeUp key={tier.name} delay={i * 0.1} className={cn("flex", tier.isPopular && "md:-mt-4 md:mb-4")}>
+                                <div className={cn(
+                                    "flex flex-col w-full p-8 rounded-3xl border transition-all duration-300 glass-card relative overflow-hidden group",
+                                    tier.isPopular ? "border-accent/50 bg-[#0B111A] scale-105 shadow-2xl shadow-accent/10" : "border-white/10 bg-white/2 hover:bg-white/5"
+                                )}>
+                                    {tier.isPopular && (
+                                        <>
+                                            <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-accent to-transparent" />
                                         <div className="absolute top-6 right-6 text-[10px] font-bold text-accent uppercase tracking-widest bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
                                             Most Popular
                                         </div>
@@ -219,9 +238,9 @@ export function PricingSection() {
 
                                 <div className="mb-8">
                                     <span className="text-3xl font-bold text-white">
-                                        {category === 'time' 
-                                            ? formatIDR((tier as any).prices[period])
-                                            : formatIDR((tier as any).price)
+                                        {isTimeTier 
+                                            ? formatIDR((tier as TimeTier).prices[period])
+                                            : formatIDR((tier as TokenTier).price)
                                         }
                                     </span>
                                     <span className="text-white/40 text-sm ml-1">
@@ -233,7 +252,7 @@ export function PricingSection() {
                                     onClick={() => handleWhatsAppClick(tier.name, category === 'time' ? period : `${tier.name} Token`)}
                                     className={cn(
                                         "w-full rounded-xl mb-8 font-bold h-12 transition-all group-hover:scale-[1.02]",
-                                        (tier as any).isPopular
+                                        tier.isPopular
                                             ? "bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/20"
                                             : "glass border-white/10 hover:bg-white/10 text-white"
                                     )}
@@ -253,18 +272,19 @@ export function PricingSection() {
                                         ))}
                                     </ul>
                                     
-                                    {(tier as any).addons && (
+                                    {tier.addons && (
                                         <div className="pt-4 mt-4 border-t border-white/5">
                                             <p className="text-xs font-bold text-white/30 uppercase tracking-widest mb-2">Supported Add-ons</p>
                                             <p className="text-xs text-white/50 leading-relaxed">
-                                                {(tier as any).addons}
+                                                {tier.addons}
                                             </p>
                                         </div>
                                     )}
                                 </div>
                             </div>
                         </FadeUp>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
         </section>

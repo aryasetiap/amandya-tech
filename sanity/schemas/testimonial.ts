@@ -28,5 +28,12 @@ export const testimonialType = {
       type: 'image',
       options: { hotspot: true },
     },
+    {
+      name: 'rating',
+      title: 'Rating',
+      type: 'number',
+      initialValue: 5,
+      validation: (Rule: Rule) => Rule.min(1).max(5),
+    },
   ],
 };

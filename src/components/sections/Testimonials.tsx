@@ -56,7 +56,7 @@ export function Testimonials({ initialTestimonials = [] }: { initialTestimonials
 
             {/* Infinite Marquee effect using CSS */}
             <div className="relative flex overflow-x-hidden group">
-                <div className="py-4 animate-marquee whitespace-nowrap flex gap-6 hover:pause shrink-0 pl-6">
+                <div className="py-4 animate-marquee whitespace-nowrap flex gap-6 group-hover:pause shrink-0 pl-6">
                     {displayTestimonials.map((t, i) => (
                         <div key={t._id || i} className="w-[350px] md:w-[450px] p-8 rounded-2xl bg-[#0B111A] border border-white/10 shrink-0 whitespace-normal">
                             <div className="flex text-accent mb-4">
@@ -79,7 +79,7 @@ export function Testimonials({ initialTestimonials = [] }: { initialTestimonials
                 </div>
 
                 {/* Duplicate for seamless infinite scrolling */}
-                <div className="py-4 animate-marquee whitespace-nowrap flex gap-6 hover:pause shrink-0 pl-6" aria-hidden="true">
+                <div className="py-4 animate-marquee whitespace-nowrap flex gap-6 group-hover:pause shrink-0 pl-6" aria-hidden="true">
                     {displayTestimonials.map((t, i) => (
                         <div key={`dup-${t._id || i}`} className="w-[350px] md:w-[450px] p-8 rounded-2xl bg-[#0B111A] border border-white/10 shrink-0 whitespace-normal">
                             <div className="flex text-accent mb-4">

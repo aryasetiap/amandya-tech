@@ -6,6 +6,7 @@ export const testimonialsQuery = groq`
     name,
     company,
     content,
+    rating,
     "avatarUrl": avatar.asset->url
   }
 `;
