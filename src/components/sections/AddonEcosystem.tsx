@@ -1,34 +1,34 @@
 'use client';
 
 import { FadeUp } from '@/components/animations/FadeUp';
-import { Sparkles, Video, Share, UploadCloud, Brush } from 'lucide-react';
+import { Sparkles, Mail, Sticker, Camera, Zap } from 'lucide-react';
 
 const ADDONS = [
     {
-        title: 'Flipbook Digital',
-        description: 'Ubah jepretan burst mode jadi digital flipbook interaktif yang shareable banget.',
-        icon: <Video className="w-5 h-5 text-purple-400" />,
-        color: 'bg-purple-500/10',
-        border: 'border-purple-500/20',
+        title: 'Live Mode Integration',
+        description: 'Tampilkan jepretan tamu secara real-time ke big screen atau TV di venue event. Bikin suasana makin hype!',
+        icon: <Zap className="w-5 h-5 text-yellow-400" />,
+        color: 'bg-yellow-500/10',
+        border: 'border-yellow-500/20',
     },
     {
-        title: 'Consent App Sharing',
-        description: 'Dedicated iPad App biar tamu bisa liat foto, isi disclaimer, & input data diri secara super private di luar main booth.',
-        icon: <Share className="w-5 h-5 text-emerald-400" />,
+        title: 'Dual Camera Support',
+        description: 'Switch antara DSLR untuk output jernih dan Webcam/Wide-angle untuk video atau boomerang yang seru.',
+        icon: <Camera className="w-5 h-5 text-emerald-400" />,
         color: 'bg-emerald-500/10',
         border: 'border-emerald-500/20',
     },
     {
-        title: 'Cloud Print Queue',
-        description: 'Kirim print job ke banyak printer sekaligus di seluruh venue dengan gampang via Local Network atau Cloud.',
-        icon: <UploadCloud className="w-5 h-5 text-blue-400" />,
+        title: 'Email & Custom Link',
+        description: 'Kirim soft-file otomatis via Email atau Link Sharing dengan branding lo sendiri (White-label experience).',
+        icon: <Mail className="w-5 h-5 text-blue-400" />,
         color: 'bg-blue-500/10',
         border: 'border-blue-500/20',
     },
     {
-        title: 'AI Remove Background',
-        description: 'Ganti background instan pakai AI magic. Gak butuh green screen atau backdrop fisik yang ribet.',
-        icon: <Brush className="w-5 h-5 text-pink-400" />,
+        title: 'Extra Print & Sticker',
+        description: 'Tambah fitur cetak ekstra atau digital sticker lucu buat nambah value (dan cuan) di tiap event lo.',
+        icon: <Sticker className="w-5 h-5 text-pink-400" />,
         color: 'bg-pink-500/10',
         border: 'border-pink-500/20',
     },
@@ -43,10 +43,10 @@ export function AddonEcosystem() {
                         <FadeUp>
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
                                 <Sparkles className="w-4 h-4 text-accent" />
-                                <span className="text-sm font-medium text-white/80">Super Flexible Architecture</span>
+                                <span className="text-sm font-medium text-white/80">Arsitektur Super Sat Set</span>
                             </div>
                             <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-                                Makin pro dengan <span className="text-accent text-gradient">Premium Add-ons</span>
+                                Makin Pro dengan <span className="text-accent text-gradient">Custom Add-ons</span>
                             </h2>
                             <p className="text-lg text-white/60 max-w-xl">
                                 Mulai dari core software, dan tambah modul premium kapan pun bisnis lo butuh scale up. Amandya Tech siap tumbuh bareng lo.

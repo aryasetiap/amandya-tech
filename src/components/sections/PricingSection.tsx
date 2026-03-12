@@ -150,7 +150,7 @@ export function PricingSection() {
                 <div className="text-center mb-16 max-w-2xl mx-auto">
                     <FadeUp>
                         <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-                            Simple & Transparent Pricing
+                            Harga Jujur, Fitur Gak Ngadi-ngadi
                         </h2>
                         
                         {/* Primary Category Toggle */}

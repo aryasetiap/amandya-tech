@@ -109,16 +109,16 @@ export function Hero() {
                                 {/* Header / Stats Row */}
                                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                                     <div className="p-4 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden group/card">
-                                        <div className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Live Captures</div>
-                                        <div className="text-xl font-bold text-white mb-1">1,284</div>
-                                        <div className="text-[10px] text-emerald-400 font-medium">+12.5%</div>
+                                        <div className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Total Shutter Count</div>
+                                        <div className="text-xl font-bold text-white mb-1">12,842</div>
+                                        <div className="text-[10px] text-emerald-400 font-medium">+12.5% Today</div>
                                         <div className="absolute -right-2 -bottom-2 opacity-5">
                                             <Camera size={48} />
                                         </div>
                                     </div>
                                     <div className="p-4 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden group/card">
-                                        <div className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Active Booths</div>
-                                        <div className="text-xl font-bold text-white mb-1">03</div>
+                                        <div className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Payment Status</div>
+                                        <div className="text-xl font-bold text-white mb-1">Online</div>
                                         <div className="flex items-center gap-1.5">
                                             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                                             <span className="text-[10px] text-emerald-500 font-medium">All Online</span>
@@ -128,15 +128,15 @@ export function Hero() {
                                         </div>
                                     </div>
                                     <div className="p-4 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden hidden lg:block">
-                                        <div className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Bandwidth</div>
-                                        <div className="text-xl font-bold text-white mb-1">4.2 GB</div>
-                                        <div className="text-[10px] text-blue-400 font-medium">Synced</div>
+                                        <div className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Voucher Usage</div>
+                                        <div className="text-xl font-bold text-white mb-1">158 Used</div>
+                                        <div className="text-[10px] text-blue-400 font-medium">85% Capacity</div>
                                         <Zap className="absolute -right-2 -bottom-2 opacity-5" size={48} />
                                     </div>
                                     <div className="p-4 rounded-xl bg-white/5 border border-white/10 relative overflow-hidden hidden lg:block">
-                                        <div className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Avg Rendering</div>
-                                        <div className="text-xl font-bold text-white mb-1">0.8s</div>
-                                        <div className="text-[10px] text-purple-400 font-medium">Accelerated</div>
+                                        <div className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Frame Processing</div>
+                                        <div className="text-xl font-bold text-white mb-1">Instant</div>
+                                        <div className="text-[10px] text-purple-400 font-medium">Auto-Render</div>
                                         <Sparkles className="absolute -right-2 -bottom-2 opacity-5" size={48} />
                                     </div>
                                 </div>

@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const TABS = [
     { id: 'gallery', label: 'Live Gallery', icon: <ImageIcon className="w-4 h-4" /> },
     { id: 'devices', label: 'Device Manager', icon: <Smartphone className="w-4 h-4" /> },
-    { id: 'analytics', label: 'Real-time Analytics', icon: <LayoutDashboard className="w-4 h-4" /> },
+    { id: 'analytics', label: 'Analitik Real-time', icon: <LayoutDashboard className="w-4 h-4" /> },
 ];
 
 export function DashboardPreview() {
@@ -21,7 +21,7 @@ export function DashboardPreview() {
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <FadeUp>
                         <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-                            Control Your Devices <span className="text-accent text-gradient">from Anywhere</span>
+                            Pantau Semua Booth Lo <span className="text-accent text-gradient">dari Mana Aja</span>
                         </h2>
                         <p className="text-lg text-white/60">
                             Pantau banyak titik photobooth sekaligus. Update template, cek hardware status, sampe buka Live Gallery, semuanya serba instan dari satu Cloud Dashboard.
@@ -112,7 +112,7 @@ export function DashboardPreview() {
                                                     </div>
                                                 </div>
                                                 <div className="text-right hidden sm:block">
-                                                    <div className="text-sm text-white/80">Battery</div>
+                                                    <div className="text-sm text-white/80">Baterai</div>
                                                     <div className="text-xs text-white/50">{device.battery}</div>
                                                 </div>
                                             </div>
@@ -131,19 +131,19 @@ export function DashboardPreview() {
                                         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
                                     >
                                         <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                                            <div className="text-sm text-white/60 mb-2">Total Captures Today</div>
+                                            <div className="text-sm text-white/60 mb-2">Total Jepretan Hari Ini</div>
                                             <div className="text-4xl font-bold text-white mb-2">1,284</div>
-                                            <div className="text-xs text-emerald-400 flex items-center gap-1">+12% vs yesterday</div>
+                                            <div className="text-xs text-emerald-400 flex items-center gap-1">+12% vs kemarin</div>
                                         </div>
                                         <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                                            <div className="text-sm text-white/60 mb-2">Emails Collected</div>
+                                            <div className="text-sm text-white/60 mb-2">Email yg Terkumpul</div>
                                             <div className="text-4xl font-bold text-white mb-2">842</div>
-                                            <div className="text-xs text-emerald-400 flex items-center gap-1">+5% vs yesterday</div>
+                                            <div className="text-xs text-emerald-400 flex items-center gap-1">+5% vs kemarin</div>
                                         </div>
                                         <div className="p-6 rounded-xl bg-white/5 border border-white/10 sm:col-span-2 md:col-span-1">
-                                            <div className="text-sm text-white/60 mb-2">Active Events</div>
+                                            <div className="text-sm text-white/60 mb-2">Event Aktif</div>
                                             <div className="text-4xl font-bold text-white mb-2">3</div>
-                                            <div className="text-xs text-white/40 flex items-center gap-1">Across 2 cities</div>
+                                            <div className="text-xs text-white/40 flex items-center gap-1">Di 2 kota berbeda</div>
                                         </div>
                                         <div className="col-span-1 sm:col-span-2 md:col-span-3 h-48 rounded-xl bg-white/5 border border-white/10 flex items-end gap-2 p-6">
                                             {/* Fake bar chart */}

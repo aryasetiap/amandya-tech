@@ -49,16 +49,16 @@ export function FeaturesBento() {
             <div className="container mx-auto px-4">
                 <FadeUp className="text-center mb-16 max-w-3xl mx-auto">
                     <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-                        Semua yang Lo Butuhin di <span className="text-accent">Satu Sistem Pintar</span>
+                        All You Need in <span className="text-accent">Satu Sistem Pintar</span>
                     </h2>
                     <p className="text-lg text-white/60">
                         Tinggalin subscription mahal & software jadul yang ribet. Amandya Tech gabungin semua workflow lo ke satu ekosistem yang effortless.
                     </p>
                 </FadeUp>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
                     {/* Main big card: Cam Shutter Mode */}
-                    <FadeUp delay={0.1} className="md:col-span-2 ">
+                    <FadeUp delay={0.1} className="md:col-span-2 md:row-span-2">
                         <BentoCard
                             title="Cam Shutter & Dual Mode"
                             description="Satu software buat semua kebutuhan. Switch instan antara DSLR untuk hasil studio-quality, atau Webcam untuk wide-angle & video seru-seruan tanpa restart aplikasi."
@@ -80,8 +80,8 @@ export function FeaturesBento() {
                                     </div>
                                 </div>
                                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                                    <div className="px-3 py-1 rounded-full bg-accent/20 text-[10px] text-accent font-bold border border-accent/20">Auto Shutter</div>
-                                    <div className="px-3 py-1 rounded-full bg-white/10 text-[10px] text-white/60 font-medium">Mirror Mode</div>
+                                     <div className="px-3 py-1 rounded-full bg-accent/20 text-[10px] text-accent font-bold border border-accent/20">Auto Shutter</div>
+                                     <div className="px-3 py-1 rounded-full bg-white/10 text-[10px] text-white/60 font-medium">Mirror Mode</div>
                                 </div>
                             </div>
                         </BentoCard>
@@ -90,18 +90,18 @@ export function FeaturesBento() {
                     {/* Card: Payment System */}
                     <FadeUp delay={0.2}>
                         <BentoCard
-                            title="Payment System Sat-Set"
-                            description="Sat-set pake QRIS atau cash. Pantau cuan lo real-time, laporannya udah otomatis rapi gak pake ribet."
+                            title="Smart Payment System"
+                            description="Terintegrasi dengan QRIS dan sistem pembayaran tunai. Monitoring transaksi jadi gampang, transparan, dan otomatis masuk laporan."
                             icon={<CreditCard className="w-6 h-6" />}
                             className="h-full"
                         >
-                            <div className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/10">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                    <span className="text-[10px] text-white/60 font-mono">Transaction_OK</span>
-                                </div>
-                                <span className="text-xs font-bold text-accent">QRIS Active</span>
-                            </div>
+                             <div className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/10">
+                                 <div className="flex items-center gap-2">
+                                     <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                                     <span className="text-[10px] text-white/60 font-mono">Transaction_OK</span>
+                                 </div>
+                                 <span className="text-xs font-bold text-accent">QRIS Active</span>
+                             </div>
                         </BentoCard>
                     </FadeUp>
 
@@ -109,17 +109,17 @@ export function FeaturesBento() {
                     <FadeUp delay={0.3}>
                         <BentoCard
                             title="Real-time Cloud Sync"
-                            description="Gak perlu fomo takut file ilang. Tiap jepretan langsung auto-sync ke cloud. Gallery tamu lo bakal update instan, no delay!"
+                            description="Gak usah takut file hilang. Tiap jepretan langsung kedorong ke cloud dan sinkron ke Live Gallery tamu secara instan."
                             icon={<RefreshCw className="w-6 h-6" />}
                             className="h-full"
                         />
                     </FadeUp>
 
                     {/* Card: Custom Branding */}
-                    <FadeUp delay={0.4} className="md:col-span-2">
+                    <FadeUp delay={0.4}>
                         <BentoCard
                             title="Full Visual Branding"
-                            description="Lo bebas custom vibes-nya! Dari UI screen, tombol, sampe frame fotonya bisa disesuaiin sama tema event klien. Branding lo jadi makin stand out."
+                            description="Custom semuanya! Mulai dari UI Screen, Start Button, sampai Frame Photo yang bisa lo ganti-ganti sesuai tema event klien."
                             icon={<Layout className="w-6 h-6" />}
                             className="h-full"
                         />
@@ -128,20 +128,20 @@ export function FeaturesBento() {
                     {/* Card: Analytics (Wide) */}
                     <FadeUp delay={0.5} className="md:col-span-2">
                         <BentoCard
-                            title="Business Intelligence & Dashboard"
-                            description="Kepoin tren bisnis lo di sini. Liat frame mana yang paling hype, jam rame event, sampe data customer buat narik mereka balik lagi."
+                            title="Business Intelligence & Analytics"
+                            description="Pantau performa bisnis lo. Liat frame mana yang paling laku, jam sibuk event, sampai kumpulin data customer otomatis buat retargeting."
                             icon={<BarChart3 className="w-6 h-6" />}
                             className="h-full"
                         >
                             <div className="flex gap-3">
                                 <div className="flex-1 h-3 rounded-full bg-white/5 overflow-hidden">
-                                    <div className="h-full w-[70%] bg-accent rounded-full" />
+                                     <div className="h-full w-[70%] bg-accent rounded-full" />
                                 </div>
                                 <div className="flex-1 h-3 rounded-full bg-white/5 overflow-hidden">
-                                    <div className="h-full w-[40%] bg-purple-500 rounded-full" />
+                                     <div className="h-full w-[40%] bg-purple-500 rounded-full" />
                                 </div>
                                 <div className="flex-1 h-3 rounded-full bg-white/5 overflow-hidden">
-                                    <div className="h-full w-[90%] bg-emerald-500 rounded-full" />
+                                     <div className="h-full w-[90%] bg-emerald-500 rounded-full" />
                                 </div>
                             </div>
                         </BentoCard>
@@ -151,7 +151,7 @@ export function FeaturesBento() {
                     <FadeUp delay={0.6}>
                         <BentoCard
                             title="Auto Update System"
-                            description="Gak perlu repot update manual. Software lo bakal dapet fitur baru secara otomatis. One-click magic, sat-sat-set! ✨"
+                            description="Software lo bakal selalu paling update dengan fitur baru tanpa harus install ulang manual. One-click magic! ✨"
                             icon={<Zap className="w-6 h-6" />}
                             className="h-full"
                         />

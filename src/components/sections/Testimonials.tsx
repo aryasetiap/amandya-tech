@@ -49,7 +49,7 @@ export function Testimonials({ initialTestimonials = [] }: { initialTestimonials
             <div className="container mx-auto px-4 mb-16 text-center">
                 <FadeUp>
                     <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-                        Loved by Creators <span className="text-accent">Worldwide 🖤</span>
+                        Pilihan Utama <span className="text-accent">Kreator Indonesia 🖤</span>
                     </h2>
                 </FadeUp>
             </div>
