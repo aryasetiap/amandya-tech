@@ -36,7 +36,8 @@ const ADDONS = [
 
 export function AddonEcosystem() {
     return (
-        <section className="py-24 border-y border-border bg-foreground/1">
+        <section className="py-24 border-y border-border bg-foreground/1 relative overflow-hidden">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/25 rounded-full blur-[150px] pointer-events-none" />
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-12 mb-16">
                     <div className="flex-1">

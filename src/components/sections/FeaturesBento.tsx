@@ -44,7 +44,9 @@ function BentoCard({
 export function FeaturesBento() {
     return (
         <section id="features" className="py-24 relative overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-[400px] bg-accent/5 blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-accent/30 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none translate-x-1/2 translate-y-1/2" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[600px] bg-accent/20 blur-[150px] pointer-events-none" />
 
             <div className="container mx-auto px-4">
                 <FadeUp className="text-center mb-16 max-w-3xl mx-auto">

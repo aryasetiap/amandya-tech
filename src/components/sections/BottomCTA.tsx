@@ -9,7 +9,9 @@ export function BottomCTA() {
     return (
         <section className="relative py-32 overflow-hidden border-t border-border">
             {/* Massive glow effect behind the CTA */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-accent/20 rounded-full blur-[150px] opacity-50 dark:opacity-30 pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[700px] bg-accent/40 rounded-full blur-[160px] opacity-80 dark:opacity-50 pointer-events-none" />
+            <div className="absolute bottom-0 right-[15%] w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 left-[15%] w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px] pointer-events-none" />
 
             {/* Grid Pattern */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-[0.05] dark:opacity-20 pointer-events-none" />

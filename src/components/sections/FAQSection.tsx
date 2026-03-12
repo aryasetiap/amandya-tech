@@ -42,7 +42,8 @@ export function FAQSection({ initialFaqs = [] }: { initialFaqs?: FAQItem[] }) {
 
     return (
         <section id="faq" className="py-24 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-accent/25 rounded-full blur-[130px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none -translate-x-1/4 translate-y-1/4" />
             
             <div className="container mx-auto px-4 max-w-4xl">
                 <FadeUp className="text-center mb-16">

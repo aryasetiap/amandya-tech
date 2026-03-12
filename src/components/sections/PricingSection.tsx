@@ -156,7 +156,8 @@ export function PricingSection({
 
     return (
         <section id="pricing" className="py-24 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/30 rounded-full blur-[150px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-blue-500/25 rounded-full blur-[130px] pointer-events-none -translate-x-1/2 translate-y-1/2" />
 
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16 max-w-2xl mx-auto">
