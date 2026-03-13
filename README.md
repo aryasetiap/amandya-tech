@@ -1,95 +1,97 @@
 # Amandya Tech - Marketing Landing Page
 
-**Versi:** 1.1.0 | **Status:** Dalam Pengembangan (Active)
+[![Next.js](https://img.shields.io/badge/Framework-Next.js%2015-black?logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20CSS%20v4-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+[![Sanity CMS](https://img.shields.io/badge/CMS-Sanity.io-F03E2F?logo=sanity)](https://www.sanity.io/)
+[![Vercel](https://img.shields.io/badge/Deployment-Vercel-black?logo=vercel)](https://vercel.com/)
 
-Amandya Tech adalah ekosistem perangkat lunak *Smart Interactive Photobooth System* generasi berikutnya. Repositori ini berisi kode sumber untuk *landing page* pemasaran premium bergaya SaaS Modern / Web3 yang dirancang untuk mempresentasikan proposisi nilai Amandya Tech kepada target pasar, termasuk pemilik bisnis photobooth, Event Organizer (EO), dan agensi kreatif.
+**Versi:** 1.1.0-stable | **Status:** Production Ready
 
-Proyek ini memposisikan Amandya Tech sebagai "The Vercel/Linear of Photobooth Software"—berfokus pada estetika tinggi, performa kilat (*ultra-fast*), dan Pengalaman Pengguna (UX) tanpa hambatan (*effortless*).
-
----
-
-## 🏗 Arsitektur Sistem & Teknologi (Tech Stack)
-
-Sistem ini dikembangkan menggunakan arsitektur **JAMstack** (JavaScript, API, Markup) dan prinsip **Decoupled Architecture**.
-
-*   **Frontend Framework:** [Next.js 14 (App Router)](https://nextjs.org/) - SSR & SSG untuk optimasi SEO.
-*   **Styling & UI:** [Tailwind CSS](https://tailwindcss.com/) + [Shadcn UI](https://ui.shadcn.com/) - Desain *glassmorphism* premium.
-*   **Animation Engine:** [Framer Motion](https://www.framer.com/motion/) & [GSAP](https://gsap.com/) - Animasi berbasis gulir performa tinggi.
-*   **Content Management System (CMS):** [Sanity.io](https://www.sanity.io/) - *Headless CMS* untuk pengelolaan konten dinamis.
-*   **Deployment & CI/CD:** [Vercel](https://vercel.com/) - Platform *edge global* untuk pengerahan otomatis.
+Amandya Tech adalah ekosistem perangkat lunak *Smart Interactive Photobooth System* generasi berikutnya. Repositori ini berisi kode sumber untuk *landing page* pemasaran premium bergaya SaaS Modern / Web3 yang dirancang untuk mempresentasikan proposisi nilai Amandya Tech: **"The Vercel of Photobooth Software"**.
 
 ---
 
-## 🚀 Cara Menjalankan Proyek (Getting Started)
+## ✨ Fitur Utama
+
+- **Premium UI/UX:** Desain *glassmorphism* modern dengan fokus pada estetika tinggi dan kegunaan.
+- **Ultra-Fast Performance:** Skor Core Web Vitals yang dioptimalkan untuk pengalaman tanpa hambatan.
+- **Interactive Bento Grid:** Presentasi fitur menggunakan layout asimetris bergaya Apple/Linear.
+- **Dynamic Content:** Integrasi penuh dengan Sanity.io untuk pengelolaan konten yang fleksibel.
+- **Smooth Animations:** Menggunakan Framer Motion dan GSAP untuk interaksi berbasis gulir yang halus.
+
+---
+
+## 🏗 Teknologi (Tech Stack)
+
+Sistem ini dikembangkan menggunakan arsitektur **JAMstack** modern:
+
+- **Frontend:** [Next.js 15+](https://nextjs.org/) (App Router, React 19)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) + [Shadcn UI](https://ui.shadcn.com/)
+- **Animation:** [Framer Motion](https://www.framer.com/motion/) & [GSAP](https://gsap.com/)
+- **CMS:** [Sanity.io](https://www.sanity.io/)
+- **Smooth Scroll:** [Lenis](https://lenis.darkroom.engineering/)
+
+---
+
+## 🚀 Memulai (Getting Started)
 
 ### Prasyarat
-Pastikan Anda telah menginstal Node.js (versi 18.x atau terbaru) dan pengelola paket (`npm`, `yarn`, `pnpm`, atau `bun`).
+- Node.js (versi 20.x ke atas)
+- npm / pnpm / bun
 
 ### Instalasi
-1.  Kloning repositori:
+1.  **Kloning repositori:**
     ```bash
     git clone https://github.com/aryasetiap/amandya-tech.git
     cd amandya-tech
     ```
-2.  Instal semua dependensi:
+2.  **Instal dependensi:**
     ```bash
     npm install
     ```
-3.  Atur variabel lingkungan. Buat file `.env.local` di root direktori:
+3.  **Konfigurasi Variabel Lingkungan:**
+    Buat file `.env.local` dan isi dengan kredensial Sanity Anda:
     ```env
     NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
     NEXT_PUBLIC_SANITY_DATASET=production
     ```
 
-### Mode Pengembangan
-Jalankan development server:
+### Jalankan Development Server
 ```bash
 npm run dev
-# atau
-yarn dev
-# atau
-pnpm dev
-# atau
-bun dev
 ```
-Buka [http://localhost:3000](http://localhost:3000) di peramban Anda.
+Buka [http://localhost:3000](http://localhost:3000).
 
 ---
 
 ## 📂 Struktur Direktori
-Pengorganisasian kode menggunakan prinsip *Separation of Concerns*:
 
 ```text
-amandya-tech/
-├── src/
-│   ├── app/              # Routing Next.js App Router
-│   ├── components/       
-│   │   ├── ui/           # Komponen dasar Shadcn UI
-│   │   ├── bento/        # Komponen spesifik Bento Grid
-│   │   ├── animations/   # Wrapper animasi
-│   │   └── shared/       # Komponen global (Navbar, Footer)
-│   ├── lib/              # Utilitas & Client Sanity
-│   └── styles/           # Global CSS & Tailwind config
-├── sanity/               # Skema data Sanity Studio
-└── public/               # Aset statis (Logo, Ikon, Gambar)
+src/
+├── app/              # Routing (Next.js App Router)
+├── components/       # Komponen UI & Section
+│   ├── ui/           # Radix/Shadcn Base
+│   ├── sections/     # Page Sections (Hero, Features, etc.)
+│   └── shared/       # Navbar & Footer
+├── lib/              # Config & Sanity Client
+└── styles/           # Global CSS (Tailwind v4)
 ```
 
 ---
 
-## ⚡ Target Performa (Core Web Vitals)
-*   **LCP (Largest Contentful Paint):** < 2.5 detik.
-*   **FID (First Input Delay):** < 100 milidetik.
-*   **CLS (Cumulative Layout Shift):** < 0.1.
-*   **Lazy Loading:** Komponen *below-the-fold* dimuat secara dinamis via `next/dynamic`.
+## ⚡ Target Performa
+- **LCP:** < 2.0 detik
+- **CLS:** < 0.1
+- **SEO Ready:** Metadata dinamis dan struktur heading semantik.
 
 ---
 
-## 🌐 Publikasi (Deployment)
-Setiap *commit* ke cabang `main` akan memicu proses *build* dan *deployment* otomatis di **Vercel**. Pastikan Environment Variables telah dikonfigurasi di dasbor Vercel.
+## 🌐 Deployment
+Dideploy secara otomatis melalui **Vercel** setiap kali ada perubahan pada cabang `main`.
 
 ---
 
-## 📚 Pelajari Lebih Lanjut
-*   [Dokumentasi Next.js](https://nextjs.org/docs)
-*   [Sanity Next.js Toolkit](https://www.sanity.io/docs/nextjs)
-*   [Shadcn UI Docs](https://ui.shadcn.com/docs)
+## 📚 Referensi
+- [Dokumentasi Next.js](https://nextjs.org/docs)
+- [Sanity Studio](https://www.sanity.io/docs)
+- [Tailwind CSS v4 Guide](https://tailwindcss.com/docs/v4-beta)
